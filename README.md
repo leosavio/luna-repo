@@ -215,6 +215,24 @@ The showcase includes:
 7. **Clean OS**: Ubuntu 22.04 LTS, stable and optimized
 8. **Verified Performance**: All benchmarks documented and reproducible - **EXCEEDS EXPECTATIONS!**
 
+
+## Videos
+
+- Motherboard: https://youtu.be/T5hraZKx8gY
+- Motherboard on Case: https://youtu.be/rgjwlXlZPcU
+- Motherboard fixing on Case: https://youtu.be/_rAUn3Zc7eo
+- WaterCooler part 1: https://youtu.be/UBpIvL8APe4
+- WaterCooler part 2: https://youtu.be/JWQUUx0IBlw
+- Case: https://youtube.com/shorts/nQewL7FmGMw?feature=share
+- GPU: https://youtu.be/ZXM7xkRR7J0
+- Font: https://youtu.be/C4o4SE9Y79I
+- Support: https://youtu.be/KwdanlJgcWE
+- BIOS: https://youtu.be/LatsR-tt_z0
+- First Boot: https://youtu.be/n48Gs9FtPHY
+
+
+## Github: https://github.com/leosavio/luna-repo
+
 ---
 
 ## 📝 License
