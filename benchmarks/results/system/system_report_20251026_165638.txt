@@ -1,0 +1,113 @@
+=== Luna Super Machine - System Report ===
+Timestamp: dom 26 out 2025 17:00:13 -03
+
+=== OS Information ===
+Linux lunatars 6.8.0-85-generic #85~22.04.1-Ubuntu SMP PREEMPT_DYNAMIC Fri Sep 19 16:18:59 UTC 2 x86_64 x86_64 x86_64 GNU/Linux
+Distributor ID:	Ubuntu
+Description:	Ubuntu 22.04.5 LTS
+Release:	22.04
+Codename:	jammy
+
+=== CPU Information ===
+Architecture:                         x86_64
+CPU op-mode(s):                       32-bit, 64-bit
+Address sizes:                        48 bits physical, 48 bits virtual
+Byte Order:                           Little Endian
+CPU(s):                               24
+On-line CPU(s) list:                  0-23
+Vendor ID:                            AuthenticAMD
+Model name:                           AMD Ryzen 9 5900X 12-Core Processor
+CPU family:                           25
+Model:                                33
+Thread(s) per core:                   2
+Core(s) per socket:                   12
+Socket(s):                            1
+Stepping:                             0
+Frequency boost:                      enabled
+CPU max MHz:                          3700,0000
+CPU min MHz:                          2200,0000
+BogoMIPS:                             7399.80
+Flags:                                fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx mmxext fxsr_opt pdpe1gb rdtscp lm constant_tsc rep_good nopl nonstop_tsc cpuid extd_apicid aperfmperf rapl pni pclmulqdq monitor ssse3 fma cx16 sse4_1 sse4_2 movbe popcnt aes xsave avx f16c rdrand lahf_lm cmp_legacy svm extapic cr8_legacy abm sse4a misalignsse 3dnowprefetch osvw ibs skinit wdt tce topoext perfctr_core perfctr_nb bpext perfctr_llc mwaitx cpb cat_l3 cdp_l3 hw_pstate ssbd mba ibrs ibpb stibp vmmcall fsgsbase bmi1 avx2 smep bmi2 erms invpcid cqm rdt_a rdseed adx smap clflushopt clwb sha_ni xsaveopt xsavec xgetbv1 xsaves cqm_llc cqm_occup_llc cqm_mbm_total cqm_mbm_local user_shstk clzero irperf xsaveerptr rdpru wbnoinvd arat npt lbrv svm_lock nrip_save tsc_scale vmcb_clean flushbyasid decodeassists pausefilter pfthreshold avic v_vmsave_vmload vgif v_spec_ctrl umip pku ospke vaes vpclmulqdq rdpid overflow_recov succor smca fsrm debug_swap
+Virtualization:                       AMD-V
+L1d cache:                            384 KiB (12 instances)
+L1i cache:                            384 KiB (12 instances)
+L2 cache:                             6 MiB (12 instances)
+L3 cache:                             64 MiB (2 instances)
+NUMA node(s):                         1
+NUMA node0 CPU(s):                    0-23
+Vulnerability Gather data sampling:   Not affected
+Vulnerability Itlb multihit:          Not affected
+Vulnerability L1tf:                   Not affected
+Vulnerability Mds:                    Not affected
+Vulnerability Meltdown:               Not affected
+Vulnerability Mmio stale data:        Not affected
+Vulnerability Reg file data sampling: Not affected
+Vulnerability Retbleed:               Not affected
+Vulnerability Spec rstack overflow:   Vulnerable: Safe RET, no microcode
+Vulnerability Spec store bypass:      Mitigation; Speculative Store Bypass disabled via prctl
+Vulnerability Spectre v1:             Mitigation; usercopy/swapgs barriers and __user pointer sanitization
+Vulnerability Spectre v2:             Mitigation; Retpolines; IBPB conditional; IBRS_FW; STIBP always-on; RSB filling; PBRSB-eIBRS Not affected; BHI Not affected
+Vulnerability Srbds:                  Not affected
+Vulnerability Tsx async abort:        Not affected
+
+=== Memory Information ===
+               total        used        free      shared  buff/cache   available
+Mem:            62Gi       2,5Gi        56Gi        17Mi       3,9Gi        59Gi
+Swap:             0B          0B          0B
+
+=== Storage Information ===
+Filesystem      Size  Used Avail Use% Mounted on
+tmpfs           6,3G  2,2M  6,3G   1% /run
+/dev/nvme0n1p4  1,9T  368G  1,4T  21% /
+tmpfs            32G   11M   32G   1% /dev/shm
+tmpfs           5,0M  4,0K  5,0M   1% /run/lock
+efivarfs        128K   33K   91K  27% /sys/firmware/efi/efivars
+/dev/nvme0n1p3  945M  205M  675M  24% /boot
+/dev/nvme0n1p2  489M  6,1M  482M   2% /boot/efi
+tmpfs           6,3G  112K  6,3G   1% /run/user/1000
+
+=== GPU Information ===
+Sun Oct 26 17:00:13 2025       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 570.172.08             Driver Version: 570.172.08     CUDA Version: 12.8     |
+|-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA GeForce RTX 3060        On  |   00000000:07:00.0  On |                  N/A |
+|  0%   41C    P8             14W /  170W |     342MiB /  12288MiB |     14%      Default |
+|                                         |                        |                  N/A |
++-----------------------------------------+------------------------+----------------------+
+                                                                                         
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|    0   N/A  N/A            1276      G   /usr/lib/xorg/Xorg                      168MiB |
+|    0   N/A  N/A            1485      G   /usr/bin/gnome-shell                     72MiB |
+|    0   N/A  N/A            7550      G   /usr/share/code/code                     49MiB |
++-----------------------------------------------------------------------------------------+
+
+=== Boot Time ===
+Startup finished in 16.728s (firmware) + 1.370s (loader) + 3.027s (kernel) + 1min 54.366s (userspace) = 2min 15.492s 
+graphical.target reached after 23.014s in userspace
+
+=== Temperatures ===
+nvme-pci-0100
+Adapter: PCI adapter
+Composite:    +73.8°C  (low  = -20.1°C, high = +83.8°C)
+                       (crit = +88.8°C)
+Sensor 2:     +75.8°C  
+
+iwlwifi_1-virtual-0
+Adapter: Virtual device
+temp1:        +63.0°C  
+
+k10temp-pci-00c3
+Adapter: PCI adapter
+Tctl:         +89.8°C  
+Tccd1:        +55.8°C  
+Tccd2:        +55.2°C  
+

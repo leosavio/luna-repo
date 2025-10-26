@@ -1,0 +1,28 @@
+╔════════════════════════════════════════════════════════════════╗
+║         LUNA SUPER MACHINE - BENCHMARK SUMMARY                ║
+╚════════════════════════════════════════════════════════════════╝
+
+Benchmark Date: dom 26 out 2025 17:13:57 -03
+Results Directory: /home/leosavio/Tarscase/temp/luna/luna-repo/benchmarks/results
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SYSTEM SPECIFICATIONS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CPU:     AMD Ryzen 9 5900X (12C/24T, 3.7-4.8 GHz)
+GPU:     ASUS TUF Gaming RTX 3060 12GB GDDR6
+RAM:     Corsair Vengeance LPX 64GB DDR4-3200 CL16
+Storage: Kingston KC3000 2TB NVMe PCIe 4.0
+Mobo:    ASUS TUF Gaming B550-PLUS (WI-FI)
+Cooling: Corsair H60 120mm AIO
+PSU:     Corsair RM850x 850W 80+ Gold
+OS:      Ubuntu 22.04.5 LTS
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BENCHMARK RESULTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CPU Performance:
+    events per second: 64330.97
+
+Storage Performance:

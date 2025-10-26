@@ -1,0 +1,407 @@
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo$ sudo lspci -vv | grep -A 20 "Non-Volatile"
+[sudo] password for leosavio: 
+01:00.0 Non-Volatile memory controller: Kingston Technology Company, Inc. Device 5013 (rev 01) (prog-if 02 [NVM Express])
+	Subsystem: Kingston Technology Company, Inc. Device 5013
+	Control: I/O- Mem+ BusMaster+ SpecCycle- MemWINV- VGASnoop- ParErr- Stepping- SERR- FastB2B- DisINTx+
+	Status: Cap+ 66MHz- UDF- FastB2B- ParErr- DEVSEL=fast >TAbort- <TAbort- <MAbort- >SERR- <PERR- INTx-
+	Latency: 0, Cache Line Size: 64 bytes
+	Interrupt: pin A routed to IRQ 57
+	IOMMU group: 14
+	Region 0: Memory at fc800000 (64-bit, non-prefetchable) [size=16K]
+	Capabilities: [80] Express (v2) Endpoint, MSI 00
+		DevCap:	MaxPayload 512 bytes, PhantFunc 0, Latency L0s unlimited, L1 unlimited
+			ExtTag+ AttnBtn- AttnInd- PwrInd- RBE+ FLReset+ SlotPowerLimit 75.000W
+		DevCtl:	CorrErr+ NonFatalErr+ FatalErr+ UnsupReq+
+			RlxdOrd+ ExtTag+ PhantFunc- AuxPwr- NoSnoop+ FLReset-
+			MaxPayload 512 bytes, MaxReadReq 512 bytes
+		DevSta:	CorrErr+ NonFatalErr- FatalErr- UnsupReq+ AuxPwr- TransPend-
+		LnkCap:	Port #0, Speed 16GT/s, Width x4, ASPM L1, Exit Latency L1 <64us
+			ClockPM- Surprise- LLActRep- BwNot- ASPMOptComp+
+		LnkCtl:	ASPM Disabled; RCB 64 bytes, Disabled- CommClk+
+			ExtSynch- ClockPM- AutWidDis- BWInt- AutBWInt-
+		LnkSta:	Speed 16GT/s (ok), Width x4 (ok)
+			TrErr- Train- SlotClk+ DLActive- BWMgmt- ABWMgmt-
+pcilib: sysfs_read_vpd: read failed: No such device
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo$ echo none | sudo tee /sys/block/nvme0n1/queue/scheduler
+none
+
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║           LUNA SUPER MACHINE - BENCHMARK SUITE                ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+[2025-10-26 16:56:38] Starting benchmark suite in full mode
+================================
+System Check
+================================
+[2025-10-26 16:56:38] Checking system requirements...
+[2025-10-26 16:56:38] OS: Ubuntu 22.04.5 LTS (Jammy Jellyfish)
+[2025-10-26 16:56:38] CPU: AMD Ryzen 9 5900X 12-Core Processor
+[2025-10-26 16:56:38] GPU: NVIDIA GeForce RTX 3060
+[2025-10-26 16:56:38] Memory: 62Gi
+[sudo] password for leosavio: 
+[2025-10-26 16:56:42] Storage: /dev/nvme0n1          50026B7686B2682D     KINGSTON SKC3000D2048G                   1           2,05  TB /   2,05  TB    512   B +  0 B   EIFK31.6
+
+================================
+Checking Dependencies
+================================
+✓ All dependencies installed
+
+================================
+CPU Benchmarks - AMD Ryzen 9 5900X
+================================
+[2025-10-26 16:56:43] Starting CPU benchmarks...
+ℹ Running Sysbench CPU (single-thread)...
+✓ Sysbench single-thread complete
+ℹ Running Sysbench CPU (multi-thread)...
+✓ Sysbench multi-thread complete
+ℹ Running 7-Zip benchmark...
+✓ 7-Zip benchmark complete
+ℹ Running OpenSSL benchmark...
+✓ OpenSSL benchmark complete
+[2025-10-26 16:58:29] CPU benchmarks complete
+
+================================
+GPU Benchmarks - NVIDIA RTX 3060 12GB
+================================
+[2025-10-26 16:58:29] Starting GPU benchmarks...
+✗ glmark2 is not installed
+⚠ GLMark2 not installed. Skipping.
+✗ hashcat is not installed
+⚠ Hashcat not installed. Skipping.
+[2025-10-26 16:58:29] GPU benchmarks complete
+
+================================
+Storage Benchmarks - Kingston KC3000 2TB
+================================
+[2025-10-26 16:58:29] Starting storage benchmarks...
+ℹ Running FIO sequential read test...
+✓ Sequential read complete0%][r=1007MiB/s][r=8055 IOPS][eta 00m:00s]
+ℹ Running FIO sequential write test...
+✓ Sequential write complete%][w=3351MiB/s][w=26.8k IOPS][eta 00m:00s]
+ℹ Running FIO random read test...
+✓ Random read complete100.0%][r=2942MiB/s][r=753k IOPS][eta 00m:00s]
+[2025-10-26 17:00:01] Storage benchmarks complete
+
+================================
+Memory Benchmarks - 64GB DDR4-3200
+================================
+[2025-10-26 17:00:01] Starting memory benchmarks...
+ℹ Running Sysbench memory (sequential)...
+✓ Sequential memory test complete
+ℹ Running Sysbench memory (random)...
+✓ Random memory test complete
+✗ stream is not installed
+⚠ STREAM not installed. Skipping.
+[2025-10-26 17:00:13] Memory benchmarks complete
+
+================================
+System Benchmarks - Overall Performance
+================================
+[2025-10-26 17:00:13] Starting system benchmarks...
+✓ System report generated
+[2025-10-26 17:00:13] System benchmarks complete
+
+================================
+Generating Summary Report
+================================
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo/benchmarks$
+
+
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo$ gitstatus
+Command 'gitstatus' not found, did you mean:
+  command 'mgitstatus' from deb mgitstatus (2.0+dfsg-3)
+Try: sudo apt install <deb name>
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	benchmarks/results/benchmark_summary_20251026_165638.txt
+	benchmarks/results/cpu/7zip_20251026_165638.txt
+	benchmarks/results/cpu/openssl_20251026_165638.txt
+	benchmarks/results/cpu/sysbench_1t_20251026_165638.txt
+	benchmarks/results/cpu/sysbench_24t_20251026_165638.txt
+	benchmarks/results/gpu/gpu_info_20251026_165638.txt
+	benchmarks/results/memory/memory_info_20251026_165638.txt
+	benchmarks/results/memory/sysbench_rnd_20251026_165638.txt
+	benchmarks/results/memory/sysbench_seq_20251026_165638.txt
+	benchmarks/results/storage/fio_rand_read_20251026_165638.txt
+	benchmarks/results/storage/fio_seq_read_20251026_165638.txt
+	benchmarks/results/storage/fio_seq_write_20251026_165638.txt
+	benchmarks/results/storage/nvme_info_20251026_165638.txt
+	benchmarks/results/system/system_report_20251026_165638.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo$ sudo sensors-detect --auto
+# sensors-detect version 3.6.0
+# Board: ASUSTeK COMPUTER INC. TUF GAMING B550-PLUS (WI-FI)
+# Kernel: 6.8.0-85-generic x86_64
+# Processor: AMD Ryzen 9 5900X 12-Core Processor (25/33/0)
+
+Running in automatic mode, default answers to all questions
+are assumed.
+
+Some south bridges, CPUs or memory controllers contain embedded sensors.
+Do you want to scan for them? This is totally safe. (YES/no): 
+Module cpuid loaded successfully.
+Silicon Integrated Systems SIS5595...                       No
+VIA VT82C686 Integrated Sensors...                          No
+VIA VT8231 Integrated Sensors...                            No
+AMD K8 thermal sensors...                                   No
+AMD Family 10h thermal sensors...                           No
+AMD Family 11h thermal sensors...                           No
+AMD Family 12h and 14h thermal sensors...                   No
+AMD Family 15h thermal sensors...                           No
+AMD Family 16h thermal sensors...                           No
+AMD Family 17h thermal sensors...                           Success!
+    (driver `k10temp')
+AMD Family 15h power sensors...                             No
+AMD Family 16h power sensors...                             No
+Hygon Family 18h thermal sensors...                         No
+Intel digital thermal sensor...                             No
+Intel AMB FB-DIMM thermal sensor...                         No
+Intel 5500/5520/X58 thermal sensor...                       No
+VIA C7 thermal sensor...                                    No
+VIA Nano thermal sensor...                                  No
+
+Some Super I/O chips contain embedded sensors. We have to write to
+standard I/O ports to probe them. This is usually safe.
+Do you want to scan for Super I/O sensors? (YES/no): 
+Probing for Super-I/O at 0x2e/0x2f
+Trying family `National Semiconductor/ITE'...               No
+Trying family `SMSC'...                                     No
+Trying family `VIA/Winbond/Nuvoton/Fintek'...               Yes
+Found `Nuvoton NCT6798D Super IO Sensors'                   Success!
+    (address 0x290, driver `nct6775')
+Probing for Super-I/O at 0x4e/0x4f
+Trying family `National Semiconductor/ITE'...               No
+Trying family `SMSC'...                                     No
+Trying family `VIA/Winbond/Nuvoton/Fintek'...               No
+Trying family `ITE'...                                      No
+
+Some systems (mainly servers) implement IPMI, a set of common interfaces
+through which system health data may be retrieved, amongst other things.
+We first try to get the information from SMBIOS. If we don't find it
+there, we have to read from arbitrary I/O ports to probe for such
+interfaces. This is normally safe. Do you want to scan for IPMI
+interfaces? (YES/no): 
+Probing for `IPMI BMC KCS' at 0xca0...                      No
+Probing for `IPMI BMC SMIC' at 0xca8...                     No
+
+Some hardware monitoring chips are accessible through the ISA I/O ports.
+We have to write to arbitrary I/O ports to probe them. This is usually
+safe though. Yes, you do have ISA I/O ports even if you do not have any
+ISA slots! Do you want to scan the ISA I/O ports? (yes/NO): 
+
+Lastly, we can probe the I2C/SMBus adapters for connected hardware
+monitoring devices. This is the most risky part, and while it works
+reasonably well on most systems, it has been reported to cause trouble
+on some systems.
+Do you want to probe the I2C/SMBus adapters now? (YES/no): 
+Using driver `i2c-piix4' for device 0000:00:14.0: AMD KERNCZ SMBus
+
+Next adapter: SMBus PIIX4 adapter port 0 at 0b00 (i2c-0)
+Do you want to scan it? (YES/no/selectively): 
+Client found at address 0x52
+Probing for `Analog Devices ADM1033'...                     No
+Probing for `Analog Devices ADM1034'...                     No
+Probing for `SPD EEPROM'...                                 Yes
+    (confidence 8, not a hardware monitoring chip)
+Client found at address 0x53
+Probing for `Analog Devices ADM1033'...                     No
+Probing for `Analog Devices ADM1034'...                     No
+Probing for `SPD EEPROM'...                                 Yes
+    (confidence 8, not a hardware monitoring chip)
+
+Next adapter: SMBus PIIX4 adapter port 2 at 0b00 (i2c-1)
+Do you want to scan it? (YES/no/selectively): 
+
+Next adapter: SMBus PIIX4 adapter port 1 at 0b20 (i2c-2)
+Do you want to scan it? (YES/no/selectively): 
+Client found at address 0x73
+Probing for `FSC Poseidon I'...                             No
+Probing for `FSC Poseidon II'...                            No
+Probing for `FSC Scylla'...                                 No
+Probing for `FSC Hermes'...                                 No
+Probing for `FSC Heimdal'...                                No
+Probing for `FSC Heracles'...                               No
+Probing for `FSC Hades'...                                  No
+Probing for `FSC Syleus'...                                 No
+
+Next adapter: NVIDIA i2c adapter 1 at 7:00.0 (i2c-3)
+Do you want to scan it? (yes/NO/selectively): 
+
+Next adapter: NVIDIA i2c adapter 3 at 7:00.0 (i2c-4)
+Do you want to scan it? (yes/NO/selectively): 
+
+Next adapter: NVIDIA i2c adapter 5 at 7:00.0 (i2c-5)
+Do you want to scan it? (yes/NO/selectively): 
+
+Next adapter: NVIDIA i2c adapter 6 at 7:00.0 (i2c-6)
+Do you want to scan it? (yes/NO/selectively): 
+
+Next adapter: NVIDIA i2c adapter 7 at 7:00.0 (i2c-7)
+Do you want to scan it? (yes/NO/selectively): 
+
+Next adapter: NVIDIA i2c adapter 8 at 7:00.0 (i2c-8)
+Do you want to scan it? (yes/NO/selectively): 
+
+
+Now follows a summary of the probes I have just done.
+
+Driver `k10temp' (autoloaded):
+  * Chip `AMD Family 17h thermal sensors' (confidence: 9)
+
+Driver `nct6775':
+  * ISA bus, address 0x290
+    Chip `Nuvoton NCT6798D Super IO Sensors' (confidence: 9)
+
+To load everything that is needed, add this to /etc/modules:
+#----cut here----
+# Chip drivers
+nct6775
+#----cut here----
+If you have some drivers built into your kernel, the list above will
+contain too many modules. Skip the appropriate ones!
+
+Do you want to add these lines automatically to /etc/modules? (yes/NO)
+
+Unloading cpuid... OK
+
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo$ sensors
+nvme-pci-0100
+Adapter: PCI adapter
+Composite:    +54.9°C  (low  = -20.1°C, high = +83.8°C)
+                       (crit = +88.8°C)
+Sensor 2:     +75.8°C  
+
+iwlwifi_1-virtual-0
+Adapter: Virtual device
+temp1:        +63.0°C  
+
+k10temp-pci-00c3
+Adapter: PCI adapter
+Tctl:         +50.1°C  
+Tccd1:        +45.0°C  
+Tccd2:        +46.8°C  
+
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo$ udo apt install glmark2
+Command 'udo' not found, but can be installed with:
+sudo apt install udo
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo$ sudo apt install glmark2
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+The following packages were automatically installed and are no longer required:
+  dctrl-tools nvidia-firmware-570-570.124.06 nvidia-firmware-570-570.133.07 nvidia-firmware-570-570.133.20
+Use 'sudo apt autoremove' to remove them.
+The following additional packages will be installed:
+  glmark2-data
+The following NEW packages will be installed:
+  glmark2 glmark2-data
+0 upgraded, 2 newly installed, 0 to remove and 38 not upgraded.
+Need to get 6.036 kB of archives.
+After this operation, 10,2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://archive.ubuntu.com/ubuntu jammy/universe amd64 glmark2-data all 2021.02-0ubuntu1 [5.837 kB]
+Get:2 http://archive.ubuntu.com/ubuntu jammy/universe amd64 glmark2 amd64 2021.02-0ubuntu1 [199 kB]
+Fetched 6.036 kB in 3s (2.280 kB/s)
+Selecting previously unselected package glmark2-data.
+(Reading database ... 224750 files and directories currently installed.)
+Preparing to unpack .../glmark2-data_2021.02-0ubuntu1_all.deb ...
+Unpacking glmark2-data (2021.02-0ubuntu1) ...
+Selecting previously unselected package glmark2.
+Preparing to unpack .../glmark2_2021.02-0ubuntu1_amd64.deb ...
+Unpacking glmark2 (2021.02-0ubuntu1) ...
+Setting up glmark2-data (2021.02-0ubuntu1) ...
+Setting up glmark2 (2021.02-0ubuntu1) ...
+Processing triggers for man-db (2.10.2-1) ...
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo$
+
+
+## after configs
+
+╔════════════════════════════════════════════════════════════════╗
+║                                                                ║
+║           LUNA SUPER MACHINE - BENCHMARK SUITE                ║
+║                                                                ║
+╚════════════════════════════════════════════════════════════════╝
+
+[2025-10-26 17:04:55] Starting benchmark suite in full mode
+================================
+System Check
+================================
+[2025-10-26 17:04:55] Checking system requirements...
+[2025-10-26 17:04:55] OS: Ubuntu 22.04.5 LTS (Jammy Jellyfish)
+[2025-10-26 17:04:55] CPU: AMD Ryzen 9 5900X 12-Core Processor
+[2025-10-26 17:04:55] GPU: NVIDIA GeForce RTX 3060
+[2025-10-26 17:04:55] Memory: 62Gi
+[2025-10-26 17:04:55] Storage: /dev/nvme0n1          50026B7686B2682D     KINGSTON SKC3000D2048G                   1           2,05  TB /   2,05  TB    512   B +  0 B   EIFK31.6
+
+================================
+Checking Dependencies
+================================
+✓ All dependencies installed
+
+================================
+CPU Benchmarks - AMD Ryzen 9 5900X
+================================
+[2025-10-26 17:04:55] Starting CPU benchmarks...
+ℹ Running Sysbench CPU (single-thread)...
+✓ Sysbench single-thread complete
+ℹ Running Sysbench CPU (multi-thread)...
+✓ Sysbench multi-thread complete
+ℹ Running 7-Zip benchmark...
+✓ 7-Zip benchmark complete
+ℹ Running OpenSSL benchmark...
+✓ OpenSSL benchmark complete
+[2025-10-26 17:06:42] CPU benchmarks complete
+
+================================
+GPU Benchmarks - NVIDIA RTX 3060 12GB
+================================
+[2025-10-26 17:06:42] Starting GPU benchmarks...
+ℹ Running GLMark2...
+✓ GLMark2 complete
+✗ hashcat is not installed
+⚠ Hashcat not installed. Skipping.
+[2025-10-26 17:12:13] GPU benchmarks complete
+
+================================
+Storage Benchmarks - Kingston KC3000 2TB
+================================
+[2025-10-26 17:12:13] Starting storage benchmarks...
+ℹ Running FIO sequential read test...
+✓ Sequential read complete0%][r=1064MiB/s][r=8508 IOPS][eta 00m:00s]
+ℹ Running FIO sequential write test...
+✓ Sequential write complete%][w=3441MiB/s][w=27.5k IOPS][eta 00m:00s]
+ℹ Running FIO random read test...
+✓ Random read complete100.0%][r=2883MiB/s][r=738k IOPS][eta 00m:00s]
+[2025-10-26 17:13:45] Storage benchmarks complete
+
+================================
+Memory Benchmarks - 64GB DDR4-3200
+================================
+[2025-10-26 17:13:45] Starting memory benchmarks...
+ℹ Running Sysbench memory (sequential)...
+✓ Sequential memory test complete
+ℹ Running Sysbench memory (random)...
+✓ Random memory test complete
+✗ stream is not installed
+⚠ STREAM not installed. Skipping.
+[2025-10-26 17:13:57] Memory benchmarks complete
+
+================================
+System Benchmarks - Overall Performance
+================================
+[2025-10-26 17:13:57] Starting system benchmarks...
+✓ System report generated
+[2025-10-26 17:13:57] System benchmarks complete
+
+================================
+Generating Summary Report
+================================
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo/benchmarks$ 
