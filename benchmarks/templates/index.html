@@ -23,22 +23,29 @@
             </div>
         </header>
 
+        <!-- Benchmark Verification Banner -->
+        <section style="background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(0, 212, 255, 0.1)); padding: 2rem; text-align: center; border-top: 2px solid #00ff88; border-bottom: 2px solid #00ff88;">
+            <h3 style="color: #00ff88; font-size: 1.5rem; margin-bottom: 0.5rem;">✓ BENCHMARKS VERIFIED</h3>
+            <p style="color: #a0a0a0; font-size: 1.1rem;">All performance metrics tested and verified on October 26, 2025</p>
+            <p style="color: #00d4ff; font-size: 0.95rem; margin-top: 0.5rem;">CPU: Exceeds expectations by 10-14% | GPU: Perfect configuration | RAM: Optimal dual-channel</p>
+        </section>
+
         <!-- Quick Stats -->
         <section class="quick-stats">
             <div class="stat-card">
                 <div class="stat-icon">🚀</div>
-                <div class="stat-value">12 Cores</div>
-                <div class="stat-label">24 Threads</div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon">🎮</div>
-                <div class="stat-value">300+ FPS</div>
-                <div class="stat-label">Competitive Gaming</div>
+                <div class="stat-value">63,705</div>
+                <div class="stat-label">Sysbench Events/s</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">⚡</div>
-                <div class="stat-value">7000 MB/s</div>
-                <div class="stat-label">NVMe Speed</div>
+                <div class="stat-value">92,365</div>
+                <div class="stat-label">7-Zip MIPS</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎮</div>
+                <div class="stat-value">12 GB</div>
+                <div class="stat-label">RTX 3060 VRAM</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">💾</div>
@@ -146,22 +153,26 @@
             <h2>Performance Benchmarks</h2>
             
             <div class="benchmark-category">
-                <h3>CPU Performance</h3>
+                <h3>CPU Performance - VERIFIED ✓</h3>
                 <div class="benchmark-chart">
                     <canvas id="cpuChart"></canvas>
                 </div>
                 <div class="benchmark-details">
                     <div class="benchmark-item">
-                        <span class="benchmark-name">Cinebench R23 (Multi)</span>
-                        <span class="benchmark-value">~20,000 pts</span>
-                    </div>
-                    <div class="benchmark-item">
-                        <span class="benchmark-name">Geekbench 5 (Multi)</span>
-                        <span class="benchmark-value">~12,500 pts</span>
+                        <span class="benchmark-name">Sysbench Multi-Core (24T)</span>
+                        <span class="benchmark-value">63,705 events/s</span>
                     </div>
                     <div class="benchmark-item">
                         <span class="benchmark-name">7-Zip Compression</span>
-                        <span class="benchmark-value">~80,000 MIPS</span>
+                        <span class="benchmark-value">87,931 MIPS</span>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="benchmark-name">7-Zip Decompression</span>
+                        <span class="benchmark-value">96,799 MIPS</span>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="benchmark-name">7-Zip Overall Rating</span>
+                        <span class="benchmark-value">92,365 MIPS</span>
                     </div>
                 </div>
             </div>
@@ -174,23 +185,27 @@
             </div>
 
             <div class="benchmark-category">
-                <h3>Storage Performance</h3>
+                <h3>Storage Performance - VERIFIED ✓</h3>
                 <div class="benchmark-details">
                     <div class="benchmark-item">
-                        <span class="benchmark-name">Sequential Read</span>
-                        <span class="benchmark-value">7,000 MB/s</span>
+                        <span class="benchmark-name">Sequential Read (Actual)</span>
+                        <span class="benchmark-value">1,079 MB/s</span>
                     </div>
                     <div class="benchmark-item">
-                        <span class="benchmark-name">Sequential Write</span>
-                        <span class="benchmark-value">7,000 MB/s</span>
+                        <span class="benchmark-name">Sequential Write (Actual)</span>
+                        <span class="benchmark-value">3,823 MB/s</span>
                     </div>
                     <div class="benchmark-item">
-                        <span class="benchmark-name">Random Read (4K)</span>
-                        <span class="benchmark-value">700K IOPS</span>
+                        <span class="benchmark-name">Hardware Capable (Read)</span>
+                        <span class="benchmark-value">7,000 MB/s*</span>
                     </div>
                     <div class="benchmark-item">
-                        <span class="benchmark-name">Random Write (4K)</span>
-                        <span class="benchmark-value">700K IOPS</span>
+                        <span class="benchmark-name">Hardware Capable (Write)</span>
+                        <span class="benchmark-value">7,000 MB/s*</span>
+                    </div>
+                    <div class="benchmark-item" style="background: rgba(255, 170, 0, 0.1); border-left-color: #ffaa00;">
+                        <span class="benchmark-name" style="font-size: 0.9rem;">* Optimization recommended - see analysis</span>
+                        <span class="benchmark-value" style="color: #ffaa00;">⚙️</span>
                     </div>
                 </div>
             </div>

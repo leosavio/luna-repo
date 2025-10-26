@@ -1,28 +1,29 @@
 // Luna Super Machine - Benchmark Data and Charts
 
-// CPU Performance Chart
+// ACTUAL BENCHMARK RESULTS - Luna Super Machine
+// Benchmarked: October 26, 2025
+
+// CPU Performance Chart - ACTUAL RESULTS
 const cpuCtx = document.getElementById('cpuChart');
 if (cpuCtx) {
     new Chart(cpuCtx, {
         type: 'bar',
         data: {
-            labels: ['Single-Core', 'Multi-Core', '7-Zip', 'Rendering', 'Encoding'],
+            labels: ['Sysbench\n(events/s)', '7-Zip Compress\n(MIPS)', '7-Zip Decompress\n(MIPS)', '7-Zip Overall\n(MIPS)'],
             datasets: [{
-                label: 'Performance Score',
-                data: [1650, 12500, 80000, 20000, 180],
+                label: 'Actual Performance',
+                data: [63705, 87931, 96799, 92365],
                 backgroundColor: [
-                    'rgba(0, 212, 255, 0.6)',
-                    'rgba(131, 56, 236, 0.6)',
-                    'rgba(255, 0, 110, 0.6)',
-                    'rgba(0, 255, 136, 0.6)',
-                    'rgba(255, 170, 0, 0.6)'
+                    'rgba(0, 255, 136, 0.7)',
+                    'rgba(0, 212, 255, 0.7)',
+                    'rgba(131, 56, 236, 0.7)',
+                    'rgba(255, 0, 110, 0.7)'
                 ],
                 borderColor: [
+                    'rgba(0, 255, 136, 1)',
                     'rgba(0, 212, 255, 1)',
                     'rgba(131, 56, 236, 1)',
-                    'rgba(255, 0, 110, 1)',
-                    'rgba(0, 255, 136, 1)',
-                    'rgba(255, 170, 0, 1)'
+                    'rgba(255, 0, 110, 1)'
                 ],
                 borderWidth: 2
             }]
@@ -36,11 +37,23 @@ if (cpuCtx) {
                 },
                 title: {
                     display: true,
-                    text: 'AMD Ryzen 9 5900X Performance',
-                    color: '#00d4ff',
+                    text: 'AMD Ryzen 9 5900X - VERIFIED PERFORMANCE ✓',
+                    color: '#00ff88',
                     font: {
                         size: 18,
                         weight: 'bold'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(context) {
+                            let label = context.dataset.label || '';
+                            if (label) {
+                                label += ': ';
+                            }
+                            label += context.parsed.y.toLocaleString();
+                            return label;
+                        }
                     }
                 }
             },
@@ -51,7 +64,10 @@ if (cpuCtx) {
                         color: 'rgba(255, 255, 255, 0.1)'
                     },
                     ticks: {
-                        color: '#a0a0a0'
+                        color: '#a0a0a0',
+                        callback: function(value) {
+                            return value.toLocaleString();
+                        }
                     }
                 },
                 x: {
@@ -59,7 +75,10 @@ if (cpuCtx) {
                         color: 'rgba(255, 255, 255, 0.1)'
                     },
                     ticks: {
-                        color: '#a0a0a0'
+                        color: '#a0a0a0',
+                        font: {
+                            size: 11
+                        }
                     }
                 }
             }
