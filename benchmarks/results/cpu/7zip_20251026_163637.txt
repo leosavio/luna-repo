@@ -1,0 +1,21 @@
+
+7-Zip [64] 16.02 : Copyright (c) 1999-2016 Igor Pavlov : 2016-05-21
+p7zip Version 16.02 (locale=pt_BR.UTF-8,Utf16=on,HugeFiles=on,64 bits,24 CPUs AMD Ryzen 9 5900X 12-Core Processor             (A20F10),ASM,AES-NI)
+
+AMD Ryzen 9 5900X 12-Core Processor             (A20F10)
+CPU Freq: - - - 64000000 - - - - -
+
+RAM size:   64205 MB,  # CPU hardware threads:  24
+RAM usage:   5295 MB,  # Benchmark threads:     24
+
+                       Compressing  |                  Decompressing
+Dict     Speed Usage    R/U Rating  |      Speed Usage    R/U Rating
+         KiB/s     %   MIPS   MIPS  |      KiB/s     %   MIPS   MIPS
+
+22:      93123  2282   3970  90591  |    1135146  2375   4077  96797
+23:      84119  2224   3854  85707  |    1122925  2378   4086  97162
+24:      80554  2202   3934  86612  |    1103779  2373   4083  96882
+25:      77785  2191   4053  88813  |    1082639  2372   4063  96353
+----------------------------------  | ------------------------------
+Avr:            2225   3953  87931  |             2374   4077  96799
+Tot:            2300   4015  92365
