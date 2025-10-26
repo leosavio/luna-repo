@@ -249,13 +249,15 @@ run_storage_benchmarks() {
         sudo nvme smart-log /dev/nvme0 >> "$RESULTS_DIR/storage/nvme_info_${TIMESTAMP}.txt" 2>&1
     fi
     
-    # FIO sequential read
-    print_info "Running FIO sequential read test..."
+    # FIO sequential read (improved methodology)
+    print_info "Running FIO sequential read test (128KB, QD32, libaio)..."
     sudo fio --name=seq-read \
-        --filename=/tmp/fio-test-$$ \
-        --size=1G \
+        --filename=/tmp/fio-nvme-test \
+        --size=10G \
         --rw=read \
         --bs=128k \
+        --ioengine=libaio \
+        --iodepth=32 \
         --direct=1 \
         --numjobs=1 \
         --time_based \
@@ -263,14 +265,16 @@ run_storage_benchmarks() {
         --group_reporting \
         --output="$RESULTS_DIR/storage/fio_seq_read_${TIMESTAMP}.txt" 2>&1
     print_success "Sequential read complete"
-    
-    # FIO sequential write
-    print_info "Running FIO sequential write test..."
+
+    # FIO sequential write (improved methodology)
+    print_info "Running FIO sequential write test (128KB, QD32, libaio)..."
     sudo fio --name=seq-write \
-        --filename=/tmp/fio-test-$$ \
-        --size=1G \
+        --filename=/tmp/fio-nvme-test \
+        --size=10G \
         --rw=write \
         --bs=128k \
+        --ioengine=libaio \
+        --iodepth=32 \
         --direct=1 \
         --numjobs=1 \
         --time_based \
@@ -278,6 +282,9 @@ run_storage_benchmarks() {
         --group_reporting \
         --output="$RESULTS_DIR/storage/fio_seq_write_${TIMESTAMP}.txt" 2>&1
     print_success "Sequential write complete"
+
+    # Clean up test file
+    rm -f /tmp/fio-nvme-test
     
     # FIO random read 4K
     print_info "Running FIO random read test..."
