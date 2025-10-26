@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luna Super Machine - High-Performance Gaming PC</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <div class="hero-content">
+                <h1 class="glitch" data-text="LUNA SUPER MACHINE">LUNA SUPER MACHINE</h1>
+                <p class="tagline">High-Performance Gaming & Workstation Computer</p>
+                <div class="specs-highlight">
+                    <span class="spec-badge">Ryzen 9 5900X</span>
+                    <span class="spec-badge">RTX 3060 12GB</span>
+                    <span class="spec-badge">64GB RAM</span>
+                    <span class="spec-badge">2TB NVMe</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Quick Stats -->
+        <section class="quick-stats">
+            <div class="stat-card">
+                <div class="stat-icon">🚀</div>
+                <div class="stat-value">12 Cores</div>
+                <div class="stat-label">24 Threads</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">🎮</div>
+                <div class="stat-value">300+ FPS</div>
+                <div class="stat-label">Competitive Gaming</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-value">7000 MB/s</div>
+                <div class="stat-label">NVMe Speed</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">💾</div>
+                <div class="stat-value">64 GB</div>
+                <div class="stat-label">DDR4-3200</div>
+            </div>
+        </section>
+
+        <!-- Specifications -->
+        <section class="specifications">
+            <h2>Technical Specifications</h2>
+            <div class="spec-grid">
+                <div class="spec-item">
+                    <h3>🔥 Processor</h3>
+                    <p><strong>AMD Ryzen 9 5900X</strong></p>
+                    <ul>
+                        <li>12 Cores / 24 Threads</li>
+                        <li>Base: 3.7 GHz, Boost: 4.8 GHz</li>
+                        <li>70MB Cache (Zen 3)</li>
+                        <li>105W TDP</li>
+                    </ul>
+                </div>
+
+                <div class="spec-item">
+                    <h3>🎮 Graphics Card</h3>
+                    <p><strong>ASUS TUF Gaming RTX 3060</strong></p>
+                    <ul>
+                        <li>12GB GDDR6 VRAM</li>
+                        <li>3584 CUDA Cores</li>
+                        <li>Ray Tracing & DLSS</li>
+                        <li>Boost: ~1777 MHz</li>
+                    </ul>
+                </div>
+
+                <div class="spec-item">
+                    <h3>💾 Memory</h3>
+                    <p><strong>Corsair Vengeance LPX 64GB</strong></p>
+                    <ul>
+                        <li>2x32GB Dual Channel</li>
+                        <li>DDR4-3200 MHz</li>
+                        <li>CL16-18-18-36</li>
+                        <li>Low Profile Design</li>
+                    </ul>
+                </div>
+
+                <div class="spec-item">
+                    <h3>💿 Storage</h3>
+                    <p><strong>Kingston KC3000 2TB</strong></p>
+                    <ul>
+                        <li>PCIe 4.0 x4 NVMe</li>
+                        <li>Read: 7000 MB/s</li>
+                        <li>Write: 7000 MB/s</li>
+                        <li>M.2 2280 Form Factor</li>
+                    </ul>
+                </div>
+
+                <div class="spec-item">
+                    <h3>🔧 Motherboard</h3>
+                    <p><strong>ASUS TUF Gaming B550-PLUS</strong></p>
+                    <ul>
+                        <li>AMD B550 Chipset</li>
+                        <li>ATX Form Factor</li>
+                        <li>PCIe 4.0 Support</li>
+                        <li>Wi-Fi 6 Included</li>
+                    </ul>
+                </div>
+
+                <div class="spec-item">
+                    <h3>❄️ Cooling</h3>
+                    <p><strong>Corsair H60 120mm AIO</strong></p>
+                    <ul>
+                        <li>Liquid Cooling</li>
+                        <li>White LED</li>
+                        <li>Quiet Operation</li>
+                        <li>Excellent Temps</li>
+                    </ul>
+                </div>
+
+                <div class="spec-item">
+                    <h3>⚡ Power Supply</h3>
+                    <p><strong>Corsair RM850x 850W</strong></p>
+                    <ul>
+                        <li>80 Plus Gold</li>
+                        <li>Fully Modular</li>
+                        <li>White Color</li>
+                        <li>Silent Operation</li>
+                    </ul>
+                </div>
+
+                <div class="spec-item">
+                    <h3>🏠 Case</h3>
+                    <p><strong>XPG Starker Compact</strong></p>
+                    <ul>
+                        <li>Mid Tower</li>
+                        <li>Tempered Glass</li>
+                        <li>2x ARGB Fans</li>
+                        <li>White Finish</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Performance Benchmarks -->
+        <section class="benchmarks">
+            <h2>Performance Benchmarks</h2>
+            
+            <div class="benchmark-category">
+                <h3>CPU Performance</h3>
+                <div class="benchmark-chart">
+                    <canvas id="cpuChart"></canvas>
+                </div>
+                <div class="benchmark-details">
+                    <div class="benchmark-item">
+                        <span class="benchmark-name">Cinebench R23 (Multi)</span>
+                        <span class="benchmark-value">~20,000 pts</span>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="benchmark-name">Geekbench 5 (Multi)</span>
+                        <span class="benchmark-value">~12,500 pts</span>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="benchmark-name">7-Zip Compression</span>
+                        <span class="benchmark-value">~80,000 MIPS</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="benchmark-category">
+                <h3>Gaming Performance (1080p)</h3>
+                <div class="benchmark-chart">
+                    <canvas id="gamingChart"></canvas>
+                </div>
+            </div>
+
+            <div class="benchmark-category">
+                <h3>Storage Performance</h3>
+                <div class="benchmark-details">
+                    <div class="benchmark-item">
+                        <span class="benchmark-name">Sequential Read</span>
+                        <span class="benchmark-value">7,000 MB/s</span>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="benchmark-name">Sequential Write</span>
+                        <span class="benchmark-value">7,000 MB/s</span>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="benchmark-name">Random Read (4K)</span>
+                        <span class="benchmark-value">700K IOPS</span>
+                    </div>
+                    <div class="benchmark-item">
+                        <span class="benchmark-name">Random Write (4K)</span>
+                        <span class="benchmark-value">700K IOPS</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="use-cases">
+            <h2>Perfect For</h2>
+            <div class="use-case-grid">
+                <div class="use-case-card">
+                    <div class="use-case-icon">🎮</div>
+                    <h3>Gaming</h3>
+                    <p>300+ FPS in competitive games, 100+ FPS in AAA titles at 1080p Ultra, smooth 1440p gaming</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">🎬</div>
+                    <h3>Content Creation</h3>
+                    <p>4K video editing, 3D rendering, streaming with NVENC, photo editing with massive RAM</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">💻</div>
+                    <h3>Development</h3>
+                    <p>Fast compilation, multiple VMs, Docker containers, large project handling</p>
+                </div>
+                <div class="use-case-card">
+                    <div class="use-case-icon">🤖</div>
+                    <h3>Machine Learning</h3>
+                    <p>CUDA acceleration, large datasets in RAM, GPU training, data processing</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Operating System -->
+        <section class="os-section">
+            <h2>Operating System</h2>
+            <div class="os-card">
+                <div class="os-logo">🐧</div>
+                <h3>Ubuntu 22.04.5 LTS</h3>
+                <p>Stable, secure, and optimized for performance. Includes latest drivers and development tools.</p>
+                <ul>
+                    <li>Latest NVIDIA drivers for optimal gaming</li>
+                    <li>Full development environment ready</li>
+                    <li>Docker, KVM, and virtualization support</li>
+                    <li>Steam, Proton for gaming compatibility</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Contact/Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <h2>Interested in Luna Super Machine?</h2>
+                <p>This high-performance machine is available for purchase.</p>
+                <p>All benchmarks verified on Ubuntu 22.04.5 LTS</p>
+                <div class="footer-links">
+                    <a href="#" class="btn-primary">Contact Seller</a>
+                    <a href="https://github.com/yourusername/luna-repo" class="btn-secondary">View Benchmarks</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Luna Super Machine. All specifications verified.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="benchmark-data.js"></script>
+</body>
+</html>
+
