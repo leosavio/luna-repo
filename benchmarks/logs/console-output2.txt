@@ -1,0 +1,53 @@
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo/benchmarks/scripts$ sudo ./test-storage-raw.sh
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Luna Super Machine - Raw NVMe Storage Benchmark
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ℹ Detecting NVMe device...
+✓ Found NVMe device: /dev/nvme0n1
+ℹ Getting motherboard information...
+ℹ Getting NVMe slot information...
+pcilib: sysfs_read_vpd: read failed: No such device
+ℹ Current I/O scheduler:
+[none] mq-deadline 
+ℹ Getting NVMe SMART data...
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Running FIO Benchmarks (Direct I/O on large file)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ℹ Test file location: /tmp/fio-nvme-test (10GB)
+ℹ This tests the NVMe through the filesystem with direct I/O
+
+ℹ Test 1: Sequential Read (128KB blocks, queue depth 32, libaio)...
+✓ Sequential read complete0%][r=7059MiB/s][r=56.5k IOPS][eta 00m:00s]
+ℹ Test 2: Sequential Write (128KB blocks, queue depth 32, libaio)...
+✓ Sequential write complete%][w=394MiB/s][w=3148 IOPS][eta 00m:00s] 
+ℹ Test 3: Sequential Read (1MB blocks, queue depth 64, libaio)...
+✓ Sequential read (1MB) complete461MiB/s][r=461 IOPS][eta 00m:00s]
+ℹ Test 4: Sequential Write (1MB blocks, queue depth 64, libaio)...
+✓ Sequential write (1MB) complete15MiB/s][w=814 IOPS][eta 00m:00s] 
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Benchmark Complete
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+ℹ Results saved to: ../results/storage
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Quick Summary
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Sequential Read (128KB, QD32):
+  (check results file)
+Sequential Write (128KB, QD32):
+  (check results file)
+Sequential Read (1MB, QD64):
+  (check results file)
+Sequential Write (1MB, QD64):
+  (check results file)
+
+ℹ PCIe Link Status:
+		LnkSta:	Speed 16GT/s (ok), Width x4 (ok)
+
+✓ All tests complete!
+(base) leosavio@lunatars:~/Tarscase/temp/luna/luna-repo/benchmarks/scripts$ 
