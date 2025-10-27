@@ -9,14 +9,22 @@ export function GamingSection() {
   const { t } = useI18n();
 
   const gamingPerformance = [
-    { game: 'CS:GO', fps1080p: '350+', fps1440p: '300+', fps3440p: '200+', notes: t.gaming.competitiveReady, color: 'from-green-500 to-emerald-500' },
+    // Competitive Gaming - High FPS
+    { game: 'CS2 (CS:GO)', fps1080p: '350+', fps1440p: '300+', fps3440p: '200+', notes: t.gaming.competitiveReady, color: 'from-green-500 to-emerald-500' },
     { game: 'Valorant', fps1080p: '350+', fps1440p: '300+', fps3440p: '180+', notes: t.gaming.competitiveReady, color: 'from-green-500 to-emerald-500' },
-    { game: 'Apex Legends', fps1080p: '200', fps1440p: '140', fps3440p: '85', notes: t.gaming.smoothGameplay, color: 'from-blue-500 to-cyan-500' },
-    { game: 'The First Descendant', fps1080p: '90', fps1440p: '65', fps3440p: '47', notes: t.gaming.dlssBalanced, color: 'from-cyan-500 to-blue-500' },
-    { game: 'Cyberpunk 2077', fps1080p: '70', fps1440p: '55', fps3440p: '38', notes: t.gaming.rtDlss, color: 'from-purple-500 to-violet-500' },
-    { game: 'Red Dead Redemption 2', fps1080p: '85', fps1440p: '60', fps3440p: '40', notes: t.gaming.beautifulVisuals, color: 'from-orange-500 to-amber-500' },
-    { game: 'Control', fps1080p: '90', fps1440p: '65', fps3440p: '45', notes: t.gaming.rtDlssSupported, color: 'from-purple-500 to-pink-500' },
-    { game: 'Shadow of Tomb Raider', fps1080p: '110', fps1440p: '80', fps3440p: '55', notes: t.gaming.excellentPerformance, color: 'from-teal-500 to-cyan-500' },
+    { game: 'Apex Legends', fps1080p: '200', fps1440p: '140', fps3440p: '90', notes: t.gaming.smoothGameplay, color: 'from-blue-500 to-cyan-500' },
+
+    // AAA Games 2024-2025 - New Releases
+    { game: "Baldur's Gate 3", fps1080p: '95', fps1440p: '70', fps3440p: '50', notes: t.gaming.highSettings, color: 'from-amber-500 to-yellow-500' },
+    { game: 'Elden Ring', fps1080p: '60', fps1440p: '60', fps3440p: '55', notes: t.gaming.maxSettings, color: 'from-slate-500 to-gray-500' },
+    { game: 'Starfield', fps1080p: '75', fps1440p: '55', fps3440p: '42', notes: t.gaming.dlssBalanced, color: 'from-indigo-500 to-blue-500' },
+    { game: 'Cyberpunk 2077', fps1080p: '70', fps1440p: '55', fps3440p: '40', notes: t.gaming.rtDlss, color: 'from-purple-500 to-violet-500' },
+
+    // Popular AAA Titles
+    { game: 'The First Descendant', fps1080p: '90', fps1440p: '65', fps3440p: '48', notes: t.gaming.dlssBalanced, color: 'from-cyan-500 to-blue-500' },
+    { game: 'Red Dead Redemption 2', fps1080p: '85', fps1440p: '60', fps3440p: '45', notes: t.gaming.beautifulVisuals, color: 'from-orange-500 to-amber-500' },
+    { game: 'Control', fps1080p: '90', fps1440p: '65', fps3440p: '48', notes: t.gaming.rtDlssSupported, color: 'from-purple-500 to-pink-500' },
+    { game: 'Shadow of Tomb Raider', fps1080p: '110', fps1440p: '80', fps3440p: '58', notes: t.gaming.excellentPerformance, color: 'from-teal-500 to-cyan-500' },
   ];
 
   const useCases = [

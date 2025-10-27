@@ -148,6 +148,8 @@ export interface Translations {
     rtDlssSupported: string;
     excellentPerformance: string;
     dlssBalanced: string;
+    highSettings: string;
+    maxSettings: string;
     excellentForTitle: string;
     excellentForSubtitle: string;
     competitiveGaming: string;
@@ -387,6 +389,8 @@ export const translations: Record<Language, Translations> = {
       rtDlssSupported: 'RT + DLSS supported',
       excellentPerformance: 'Excellent performance',
       dlssBalanced: 'DLSS Balanced',
+      highSettings: 'High settings',
+      maxSettings: 'Max settings, 60 FPS cap',
       excellentForTitle: 'Excellent For',
       excellentForSubtitle: 'Versatile performance for any workload',
       competitiveGaming: 'Competitive Gaming',
@@ -622,6 +626,8 @@ export const translations: Record<Language, Translations> = {
       rtDlssSupported: 'RT + DLSS suportado',
       excellentPerformance: 'Excelente desempenho',
       dlssBalanced: 'DLSS Balanceado',
+      highSettings: 'Configurações altas',
+      maxSettings: 'Configurações máximas, 60 FPS cap',
       excellentForTitle: 'Excelente Para',
       excellentForSubtitle: 'Desempenho versátil para qualquer carga de trabalho',
       competitiveGaming: 'Jogos Competitivos',
