@@ -4,37 +4,40 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from './ui/tabs';
 import { Badge } from './ui/badge';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
 import { Cpu, MonitorDot, HardDrive, MemoryStick, Award } from 'lucide-react';
-
-const cpuBenchmarkData = [
-  { name: 'Single-Core', score: 5421, expected: 5200 },
-  { name: 'Multi-Core', score: 63705, expected: 60000 },
-  { name: '7-Zip Comp', score: 87931, expected: 80000 },
-  { name: '7-Zip Decomp', score: 96799, expected: 85000 },
-];
-
-const gpuBenchmarkData = [
-  { name: 'GLMark2', score: 5163, expected: 5000 },
-  { name: '1080p FPS', score: 150, expected: 120 },
-  { name: '1440p FPS', score: 95, expected: 80 },
-  { name: 'RT FPS', score: 75, expected: 60 },
-];
-
-const storageBenchmarkData = [
-  { name: 'Seq Read', score: 7510, expected: 7000 },
-  { name: 'Seq Write', score: 4959, expected: 5000 },
-  { name: 'Random Read', score: 3074, expected: 2800 },
-  { name: 'Random Write', score: 2100, expected: 2200 },
-];
-
-const overallPerformance = [
-  { category: 'CPU', performance: 106.2, fullMark: 110 },
-  { category: 'GPU', performance: 103.3, fullMark: 110 },
-  { category: 'Storage', performance: 107.3, fullMark: 110 },
-  { category: 'Memory', performance: 100, fullMark: 110 },
-  { category: 'Thermal', performance: 95, fullMark: 110 },
-];
+import { useI18n } from '../i18n/I18nProvider';
 
 export function BenchmarksSection() {
+  const { t } = useI18n();
+
+  const cpuBenchmarkData = [
+    { name: 'Single-Core', score: 5421, expected: 5200 },
+    { name: 'Multi-Core', score: 63705, expected: 60000 },
+    { name: '7-Zip Comp', score: 87931, expected: 80000 },
+    { name: '7-Zip Decomp', score: 96799, expected: 85000 },
+  ];
+
+  const gpuBenchmarkData = [
+    { name: 'GLMark2', score: 5163, expected: 5000 },
+    { name: '1080p FPS', score: 150, expected: 120 },
+    { name: '1440p FPS', score: 95, expected: 80 },
+    { name: 'RT FPS', score: 75, expected: 60 },
+  ];
+
+  const storageBenchmarkData = [
+    { name: 'Seq Read', score: 7510, expected: 7000 },
+    { name: 'Seq Write', score: 4959, expected: 5000 },
+    { name: 'Random Read', score: 3074, expected: 2800 },
+    { name: 'Random Write', score: 2100, expected: 2200 },
+  ];
+
+  const overallPerformance = [
+    { category: t.benchmarks.category.cpu, performance: 106.2, fullMark: 110 },
+    { category: t.benchmarks.category.gpu, performance: 103.3, fullMark: 110 },
+    { category: t.benchmarks.category.storage, performance: 107.3, fullMark: 110 },
+    { category: t.benchmarks.category.memory, performance: 100, fullMark: 110 },
+    { category: t.benchmarks.category.thermal, performance: 95, fullMark: 110 },
+  ];
+
   return (
     <section id="benchmarks" className="py-20 px-4 bg-slate-950/50">
       <div className="max-w-7xl mx-auto">
@@ -46,12 +49,12 @@ export function BenchmarksSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4">
-            Comprehensive Benchmarks
+            {t.benchmarks.title}
           </h2>
-          <p className="text-purple-300 mb-6">Detailed performance analysis across all components</p>
+          <p className="text-purple-300 mb-6">{t.benchmarks.subtitle}</p>
           <Badge className="bg-green-500/20 border border-green-500/50 text-green-300 px-6 py-2">
             <Award className="w-4 h-4 mr-2" />
-            All Results Verified - October 26, 2025
+            {t.benchmarks.allVerified}
           </Badge>
         </motion.div>
 
@@ -64,14 +67,14 @@ export function BenchmarksSection() {
           className="mb-12"
         >
           <Card className="bg-slate-900/50 backdrop-blur-sm border border-purple-500/30 p-8">
-            <h3 className="text-2xl text-white mb-6 text-center">Overall System Performance</h3>
+            <h3 className="text-2xl text-white mb-6 text-center">{t.benchmarks.overallSystem}</h3>
             <div className="h-96">
               <ResponsiveContainer width="100%" height="100%">
                 <RadarChart data={overallPerformance}>
                   <PolarGrid stroke="#7c3aed" opacity={0.3} />
                   <PolarAngleAxis dataKey="category" tick={{ fill: '#c4b5fd' }} />
                   <PolarRadiusAxis angle={90} domain={[0, 110]} tick={{ fill: '#c4b5fd' }} />
-                  <Radar name="Performance %" dataKey="performance" stroke="#8b5cf6" fill="#8b5cf6" fillOpacity={0.6} />
+                  <Radar name={t.benchmarks.performancePercent} dataKey="performance" stroke="#8b5cf6" fill="#8b5cf6" fillOpacity={0.6} />
                   <Legend wrapperStyle={{ color: '#c4b5fd' }} />
                   <Tooltip 
                     contentStyle={{ backgroundColor: '#1e1b4b', border: '1px solid #7c3aed', borderRadius: '8px' }}
@@ -94,28 +97,28 @@ export function BenchmarksSection() {
             <TabsList className="grid w-full grid-cols-4 bg-slate-900/50 border border-purple-500/30 mb-8">
               <TabsTrigger value="cpu" className="data-[state=active]:bg-purple-600">
                 <Cpu className="w-4 h-4 mr-2" />
-                CPU
+                {t.benchmarks.cpu}
               </TabsTrigger>
               <TabsTrigger value="gpu" className="data-[state=active]:bg-purple-600">
                 <MonitorDot className="w-4 h-4 mr-2" />
-                GPU
+                {t.benchmarks.gpu}
               </TabsTrigger>
               <TabsTrigger value="storage" className="data-[state=active]:bg-purple-600">
                 <HardDrive className="w-4 h-4 mr-2" />
-                Storage
+                {t.benchmarks.storage}
               </TabsTrigger>
               <TabsTrigger value="memory" className="data-[state=active]:bg-purple-600">
                 <MemoryStick className="w-4 h-4 mr-2" />
-                Memory
+                {t.benchmarks.memory}
               </TabsTrigger>
             </TabsList>
 
             <TabsContent value="cpu">
               <Card className="bg-slate-900/50 backdrop-blur-sm border border-purple-500/30 p-8">
                 <div className="mb-6">
-                  <h3 className="text-2xl text-white mb-2">CPU Performance - AMD Ryzen 9 5900X</h3>
+                  <h3 className="text-2xl text-white mb-2">{t.benchmarks.cpuTitle}</h3>
                   <Badge className="bg-green-500/20 border border-green-500/50 text-green-300">
-                    ⭐⭐⭐⭐⭐ EXCEEDS EXPECTATIONS
+                    {t.benchmarks.cpuRating}
                   </Badge>
                 </div>
                 <div className="h-80">
@@ -129,23 +132,23 @@ export function BenchmarksSection() {
                         labelStyle={{ color: '#c4b5fd' }}
                       />
                       <Legend wrapperStyle={{ color: '#c4b5fd' }} />
-                      <Bar dataKey="score" fill="#8b5cf6" name="Actual Score" />
-                      <Bar dataKey="expected" fill="#6366f1" name="Expected Score" />
+                      <Bar dataKey="score" fill="#8b5cf6" name={t.benchmarks.actualScore} />
+                      <Bar dataKey="expected" fill="#6366f1" name={t.benchmarks.expectedScore} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
                 <div className="mt-6 grid md:grid-cols-2 gap-4 text-sm">
                   <div className="text-purple-300">
-                    <strong className="text-white">Sysbench Multi-Core:</strong> 63,705 events/s ✓
+                    <strong className="text-white">{t.performance.sysbenchMultiCore}:</strong> 63,705 events/s ✓
                   </div>
                   <div className="text-purple-300">
-                    <strong className="text-white">7-Zip Overall:</strong> 92,365 MIPS ✓
+                    <strong className="text-white">{t.performance.sevenZipOverall}:</strong> 92,365 MIPS ✓
                   </div>
                   <div className="text-purple-300">
-                    <strong className="text-white">All 24 Threads:</strong> Working perfectly ✓
+                    <strong className="text-white">All 24 Threads:</strong> {t.benchmarks.workingPerfectly}
                   </div>
                   <div className="text-purple-300">
-                    <strong className="text-white">Performance:</strong> +10-14% above target ⭐
+                    <strong className="text-white">{t.benchmarks.performance}:</strong> +10-14% above target ⭐
                   </div>
                 </div>
               </Card>
@@ -154,9 +157,9 @@ export function BenchmarksSection() {
             <TabsContent value="gpu">
               <Card className="bg-slate-900/50 backdrop-blur-sm border border-purple-500/30 p-8">
                 <div className="mb-6">
-                  <h3 className="text-2xl text-white mb-2">GPU Performance - RTX 3060 12GB</h3>
+                  <h3 className="text-2xl text-white mb-2">{t.benchmarks.gpuTitle}</h3>
                   <Badge className="bg-green-500/20 border border-green-500/50 text-green-300">
-                    ⭐⭐⭐⭐⭐ PERFECT CONFIGURATION
+                    {t.benchmarks.gpuRating}
                   </Badge>
                 </div>
                 <div className="h-80">
@@ -170,23 +173,23 @@ export function BenchmarksSection() {
                         labelStyle={{ color: '#c4b5fd' }}
                       />
                       <Legend wrapperStyle={{ color: '#c4b5fd' }} />
-                      <Bar dataKey="score" fill="#10b981" name="Actual Performance" />
-                      <Bar dataKey="expected" fill="#059669" name="Expected Performance" />
+                      <Bar dataKey="score" fill="#10b981" name={t.benchmarks.actualPerformance} />
+                      <Bar dataKey="expected" fill="#059669" name={t.benchmarks.expectedPerformance} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
                 <div className="mt-6 grid md:grid-cols-2 gap-4 text-sm">
                   <div className="text-purple-300">
-                    <strong className="text-white">GLMark2 Score:</strong> 5,163 ✓
+                    <strong className="text-white">{t.performance.glmark2Score}:</strong> 5,163 ✓
                   </div>
                   <div className="text-purple-300">
-                    <strong className="text-white">VRAM:</strong> 12GB GDDR6 ✓
+                    <strong className="text-white">{t.performance.vram}:</strong> 12GB GDDR6 ✓
                   </div>
                   <div className="text-purple-300">
-                    <strong className="text-white">CUDA:</strong> 12.8 (Latest) ✓
+                    <strong className="text-white">{t.benchmarks.cuda}:</strong> 12.8 ({t.benchmarks.latestDriver}) ✓
                   </div>
                   <div className="text-purple-300">
-                    <strong className="text-white">Ray Tracing:</strong> DLSS 2.0+ Supported ✓
+                    <strong className="text-white">{t.benchmarks.rayTracing}:</strong> DLSS 2.0+ Supported ✓
                   </div>
                 </div>
               </Card>
@@ -195,9 +198,9 @@ export function BenchmarksSection() {
             <TabsContent value="storage">
               <Card className="bg-slate-900/50 backdrop-blur-sm border border-purple-500/30 p-8">
                 <div className="mb-6">
-                  <h3 className="text-2xl text-white mb-2">Storage Performance - Kingston KC3000 2TB</h3>
+                  <h3 className="text-2xl text-white mb-2">{t.benchmarks.storageTitle}</h3>
                   <Badge className="bg-green-500/20 border border-green-500/50 text-green-300">
-                    ⭐⭐⭐⭐⭐ EXCEEDS SPECIFICATION!
+                    {t.benchmarks.storageRating}
                   </Badge>
                 </div>
                 <div className="h-80">
@@ -211,23 +214,23 @@ export function BenchmarksSection() {
                         labelStyle={{ color: '#c4b5fd' }}
                       />
                       <Legend wrapperStyle={{ color: '#c4b5fd' }} />
-                      <Bar dataKey="score" fill="#a855f7" name="Actual Speed (MB/s)" />
-                      <Bar dataKey="expected" fill="#9333ea" name="Expected Speed (MB/s)" />
+                      <Bar dataKey="score" fill="#a855f7" name={t.benchmarks.actualSpeed} />
+                      <Bar dataKey="expected" fill="#9333ea" name={t.benchmarks.expectedSpeed} />
                     </BarChart>
                   </ResponsiveContainer>
                 </div>
                 <div className="mt-6 grid md:grid-cols-2 gap-4 text-sm">
                   <div className="text-purple-300">
-                    <strong className="text-white">Sequential Read:</strong> 7,510 MB/s ⭐ (+7%)
+                    <strong className="text-white">{t.performance.sequentialRead}:</strong> 7,510 MB/s ⭐ (+7%)
                   </div>
                   <div className="text-purple-300">
-                    <strong className="text-white">Sequential Write:</strong> 4,959 MB/s ✓
+                    <strong className="text-white">{t.performance.sequentialWrite}:</strong> 4,959 MB/s ✓
                   </div>
                   <div className="text-purple-300">
-                    <strong className="text-white">Random Read IOPS:</strong> 750,000 IOPS ✓
+                    <strong className="text-white">{t.performance.randomReadIOPS}:</strong> 750,000 IOPS ✓
                   </div>
                   <div className="text-purple-300">
-                    <strong className="text-white">PCIe Link:</strong> Gen 4.0 x4 ✓
+                    <strong className="text-white">{t.benchmarks.pcieLink}:</strong> Gen 4.0 x4 ✓
                   </div>
                 </div>
               </Card>
@@ -236,40 +239,40 @@ export function BenchmarksSection() {
             <TabsContent value="memory">
               <Card className="bg-slate-900/50 backdrop-blur-sm border border-purple-500/30 p-8">
                 <div className="mb-6">
-                  <h3 className="text-2xl text-white mb-2">Memory Performance - Corsair 64GB DDR4-3200</h3>
+                  <h3 className="text-2xl text-white mb-2">{t.benchmarks.memoryTitle}</h3>
                   <Badge className="bg-green-500/20 border border-green-500/50 text-green-300">
-                    ⭐⭐⭐⭐⭐ PERFECT CONFIGURATION
+                    {t.benchmarks.memoryRating}
                   </Badge>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="bg-purple-900/30 rounded-lg p-4">
-                      <div className="text-purple-300 mb-1">Total Capacity</div>
+                      <div className="text-purple-300 mb-1">{t.benchmarks.totalCapacity}</div>
                       <div className="text-3xl text-white">64 GB</div>
-                      <div className="text-sm text-purple-400 mt-1">2x32GB Dual-Channel ✓</div>
+                      <div className="text-sm text-purple-400 mt-1">2x32GB {t.benchmarks.dualChannel}</div>
                     </div>
                     <div className="bg-purple-900/30 rounded-lg p-4">
-                      <div className="text-purple-300 mb-1">Speed</div>
+                      <div className="text-purple-300 mb-1">{t.performance.speed}</div>
                       <div className="text-3xl text-white">3200 MT/s</div>
-                      <div className="text-sm text-purple-400 mt-1">XMP/DOCP Enabled ✓</div>
+                      <div className="text-sm text-purple-400 mt-1">{t.benchmarks.xmpEnabled}</div>
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div className="bg-purple-900/30 rounded-lg p-4">
-                      <div className="text-purple-300 mb-1">Manufacturer</div>
+                      <div className="text-purple-300 mb-1">{t.benchmarks.manufacturer}</div>
                       <div className="text-3xl text-white">Corsair</div>
-                      <div className="text-sm text-purple-400 mt-1">Vengeance LPX ✓</div>
+                      <div className="text-sm text-purple-400 mt-1">{t.benchmarks.vengeance}</div>
                     </div>
                     <div className="bg-purple-900/30 rounded-lg p-4">
-                      <div className="text-purple-300 mb-1">Configuration</div>
-                      <div className="text-3xl text-white">Optimal</div>
-                      <div className="text-sm text-purple-400 mt-1">Dual-rank for Ryzen ✓</div>
+                      <div className="text-purple-300 mb-1">{t.performance.configuration}</div>
+                      <div className="text-3xl text-white">{t.benchmarks.optimal}</div>
+                      <div className="text-sm text-purple-400 mt-1">{t.benchmarks.dualRank}</div>
                     </div>
                   </div>
                 </div>
                 <div className="mt-6 text-center text-sm text-purple-300">
-                  <strong className="text-white">CAS Latency:</strong> CL16 | 
-                  <strong className="text-white"> Part Number:</strong> CMK64GX4M2E3200C16 ✓
+                  <strong className="text-white">{t.benchmarks.casLatency}:</strong> CL16 | 
+                  <strong className="text-white"> {t.benchmarks.partNumber}:</strong> CMK64GX4M2E3200C16 ✓
                 </div>
               </Card>
             </TabsContent>

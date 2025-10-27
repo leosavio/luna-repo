@@ -1,67 +1,54 @@
 import { motion } from 'motion/react';
 import { Card } from './ui/card';
 import { Cpu, MonitorDot, MemoryStick, HardDrive, Layers, Fan, Zap, Box } from 'lucide-react';
+import { useI18n } from '../i18n/I18nProvider';
 
-const specs = [
+const specsConfig = [
   {
     icon: Cpu,
-    label: 'CPU',
-    value: 'AMD Ryzen 9 5900X',
-    details: '12C/24T, 3.7-4.8 GHz, 70MB Cache',
+    key: 'cpu' as const,
     color: 'from-red-500 to-orange-500'
   },
   {
     icon: MonitorDot,
-    label: 'GPU',
-    value: 'ASUS TUF Gaming RTX 3060',
-    details: '12GB GDDR6',
+    key: 'gpu' as const,
     color: 'from-green-500 to-emerald-500'
   },
   {
     icon: MemoryStick,
-    label: 'RAM',
-    value: 'Corsair Vengeance LPX 64GB',
-    details: '2x32GB DDR4-3200 CL16',
+    key: 'ram' as const,
     color: 'from-blue-500 to-cyan-500'
   },
   {
     icon: HardDrive,
-    label: 'Storage',
-    value: 'Kingston KC3000 2TB NVMe',
-    details: 'PCIe 4.0 (7000 MB/s R/W)',
+    key: 'storage' as const,
     color: 'from-purple-500 to-violet-500'
   },
   {
     icon: Layers,
-    label: 'Motherboard',
-    value: 'ASUS TUF Gaming B550-PLUS',
-    details: 'WI-FI',
+    key: 'motherboard' as const,
     color: 'from-yellow-500 to-amber-500'
   },
   {
     icon: Fan,
-    label: 'Cooling',
-    value: 'Corsair H60 120mm AIO',
-    details: 'Water Cooler (White LED)',
+    key: 'cooling' as const,
     color: 'from-cyan-500 to-blue-500'
   },
   {
     icon: Zap,
-    label: 'PSU',
-    value: 'Corsair RM850x 850W',
-    details: '80+ Gold Modular (White)',
+    key: 'psu' as const,
     color: 'from-indigo-500 to-purple-500'
   },
   {
     icon: Box,
-    label: 'Case',
-    value: 'XPG Starker Compact',
-    details: 'Mid Tower (Tempered Glass, 2x ARGB)',
+    key: 'case' as const,
     color: 'from-pink-500 to-rose-500'
   }
 ];
 
 export function SpecsSection() {
+  const { t } = useI18n();
+
   return (
     <section className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -73,15 +60,15 @@ export function SpecsSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4">
-            System Specifications
+            {t.specs.title}
           </h2>
-          <p className="text-purple-300">Premium components for maximum performance</p>
+          <p className="text-purple-300">{t.specs.subtitle}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {specs.map((spec, index) => (
+          {specsConfig.map((spec, index) => (
             <motion.div
-              key={spec.label}
+              key={spec.key}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -95,9 +82,9 @@ export function SpecsSection() {
                     <spec.icon className="w-6 h-6 text-white" />
                   </div>
                   
-                  <div className="text-sm text-purple-400 mb-1">{spec.label}</div>
-                  <div className="text-white mb-2">{spec.value}</div>
-                  <div className="text-sm text-purple-300/70">{spec.details}</div>
+                  <div className="text-sm text-purple-400 mb-1">{t.specs[spec.key]}</div>
+                  <div className="text-white mb-2">{t.specs[`${spec.key}Value` as keyof typeof t.specs]}</div>
+                  <div className="text-sm text-purple-300/70">{t.specs[`${spec.key}Details` as keyof typeof t.specs]}</div>
                 </div>
 
                 <motion.div
@@ -124,8 +111,8 @@ export function SpecsSection() {
             <div className="flex items-center gap-3">
               <img src="https://cdn.simpleicons.org/ubuntu/E95420" alt="Ubuntu" className="w-8 h-8" />
               <div className="text-left">
-                <div className="text-orange-300">Operating System</div>
-                <div className="text-white">Ubuntu 22.04.5 LTS</div>
+                <div className="text-orange-300">{t.specs.os}</div>
+                <div className="text-white">{t.specs.osValue}</div>
               </div>
             </div>
           </Card>

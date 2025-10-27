@@ -1,8 +1,11 @@
 import { motion } from 'motion/react';
 import { Github, Heart, Cpu, Award } from 'lucide-react';
 import { Badge } from './ui/badge';
+import { useI18n } from '../i18n/I18nProvider';
 
 export function FooterSection() {
+  const { t } = useI18n();
+  
   return (
     <footer className="py-20 px-4 border-t border-purple-500/30">
       <div className="max-w-7xl mx-auto">
@@ -26,16 +29,16 @@ export function FooterSection() {
                 ease: "linear"
               }}
             >
-              Luna Super Machine
+              {t.hero.title}
             </motion.h3>
             <p className="text-xl text-purple-300 mb-6">
-              Built with passion. Benchmarked with precision. Ready for anything. 🚀
+              {t.footer.tagline}
             </p>
             
             <div className="flex flex-wrap justify-center gap-3 mb-8">
               <Badge className="bg-orange-500/20 border border-orange-500/50 text-orange-300 px-4 py-2">
                 <img src="https://cdn.simpleicons.org/ubuntu/E95420" alt="Ubuntu" className="w-4 h-4 mr-2" />
-                Ubuntu 22.04.5 LTS
+                {t.specs.osValue}
               </Badge>
               <Badge className="bg-red-500/20 border border-red-500/50 text-red-300 px-4 py-2">
                 <Cpu className="w-4 h-4 mr-2" />
@@ -47,7 +50,7 @@ export function FooterSection() {
               </Badge>
               <Badge className="bg-purple-500/20 border border-purple-500/50 text-purple-300 px-4 py-2">
                 <Award className="w-4 h-4 mr-2" />
-                5.0/5.0 Perfect Score
+                {t.footer.perfectScore}
               </Badge>
             </div>
           </div>
@@ -81,19 +84,19 @@ export function FooterSection() {
           >
             <div className="bg-slate-900/50 rounded-lg p-4 border border-purple-500/20">
               <div className="text-2xl text-white mb-1">12</div>
-              <div className="text-sm text-purple-300">CPU Cores</div>
+              <div className="text-sm text-purple-300">{t.footer.cpuCores}</div>
             </div>
             <div className="bg-slate-900/50 rounded-lg p-4 border border-purple-500/20">
               <div className="text-2xl text-white mb-1">64GB</div>
-              <div className="text-sm text-purple-300">RAM</div>
+              <div className="text-sm text-purple-300">{t.footer.ram}</div>
             </div>
             <div className="bg-slate-900/50 rounded-lg p-4 border border-purple-500/20">
               <div className="text-2xl text-white mb-1">7,510</div>
-              <div className="text-sm text-purple-300">MB/s Read ⭐</div>
+              <div className="text-sm text-purple-300">{t.footer.readSpeed}</div>
             </div>
             <div className="bg-slate-900/50 rounded-lg p-4 border border-purple-500/20">
               <div className="text-2xl text-white mb-1">12GB</div>
-              <div className="text-sm text-purple-300">VRAM</div>
+              <div className="text-sm text-purple-300">{t.footer.vram}</div>
             </div>
           </motion.div>
 
@@ -106,21 +109,21 @@ export function FooterSection() {
             className="space-y-3"
           >
             <div className="flex items-center justify-center gap-2 text-purple-300">
-              <span>Made with</span>
+              <span>{t.footer.madeWith}</span>
               <Heart className="w-4 h-4 text-red-500 fill-red-500 animate-pulse" />
-              <span>by the Luna Super Machine team</span>
+              <span>{t.footer.by}</span>
             </div>
             
             <div className="text-sm text-purple-400">
-              Benchmarked October 26, 2025 | All Results Verified ✓
+              {t.footer.benchmarked}
             </div>
             
             <div className="text-sm text-purple-400">
-              Licensed under MIT License
+              {t.footer.license}
             </div>
 
             <div className="pt-4 text-xs text-purple-500">
-              This page is optimized for Cloudflare Pages hosting
+              {t.footer.optimizedFor}
             </div>
           </motion.div>
         </motion.div>

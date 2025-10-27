@@ -3,57 +3,61 @@ import { Card } from './ui/card';
 import { Badge } from './ui/badge';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from './ui/table';
 import { Gamepad2, Target, TrendingUp } from 'lucide-react';
-
-const gamingPerformance = [
-  { game: 'CS:GO', fps1080p: '350+', fps1440p: '300+', notes: 'Competitive ready', color: 'from-green-500 to-emerald-500' },
-  { game: 'Valorant', fps1080p: '350+', fps1440p: '300+', notes: 'Competitive ready', color: 'from-green-500 to-emerald-500' },
-  { game: 'Apex Legends', fps1080p: '200', fps1440p: '140', notes: 'Smooth gameplay', color: 'from-blue-500 to-cyan-500' },
-  { game: 'Cyberpunk 2077', fps1080p: '70', fps1440p: '55', notes: 'RT + DLSS: 75 FPS', color: 'from-purple-500 to-violet-500' },
-  { game: 'Red Dead Redemption 2', fps1080p: '85', fps1440p: '60', notes: 'Beautiful visuals', color: 'from-orange-500 to-amber-500' },
-  { game: 'Control', fps1080p: '90', fps1440p: '65', notes: 'RT + DLSS supported', color: 'from-purple-500 to-pink-500' },
-  { game: 'Shadow of Tomb Raider', fps1080p: '110', fps1440p: '80', notes: 'Excellent performance', color: 'from-teal-500 to-cyan-500' },
-];
-
-const useCases = [
-  {
-    title: 'Competitive Gaming',
-    description: '300+ FPS in esports titles',
-    icon: Target,
-    color: 'from-green-500 to-emerald-500'
-  },
-  {
-    title: 'AAA Gaming',
-    description: '100+ FPS at 1080p Ultra, 60-90 FPS at 1440p',
-    icon: Gamepad2,
-    color: 'from-blue-500 to-cyan-500'
-  },
-  {
-    title: 'Streaming',
-    description: 'NVENC hardware encoding with minimal impact',
-    icon: TrendingUp,
-    color: 'from-purple-500 to-violet-500'
-  },
-  {
-    title: 'Video Editing',
-    description: '4K timeline scrubbing, fast exports',
-    icon: Gamepad2,
-    color: 'from-orange-500 to-amber-500'
-  },
-  {
-    title: '3D Rendering',
-    description: 'Blender, Cinema 4D with GPU acceleration',
-    icon: TrendingUp,
-    color: 'from-pink-500 to-rose-500'
-  },
-  {
-    title: 'Machine Learning',
-    description: 'CUDA/TensorFlow with 12GB VRAM',
-    icon: Target,
-    color: 'from-indigo-500 to-purple-500'
-  },
-];
+import { useI18n } from '../i18n/I18nProvider';
 
 export function GamingSection() {
+  const { t } = useI18n();
+
+  const gamingPerformance = [
+    { game: 'CS:GO', fps1080p: '350+', fps1440p: '300+', fps3440p: '200+', notes: t.gaming.competitiveReady, color: 'from-green-500 to-emerald-500' },
+    { game: 'Valorant', fps1080p: '350+', fps1440p: '300+', fps3440p: '180+', notes: t.gaming.competitiveReady, color: 'from-green-500 to-emerald-500' },
+    { game: 'Apex Legends', fps1080p: '200', fps1440p: '140', fps3440p: '85', notes: t.gaming.smoothGameplay, color: 'from-blue-500 to-cyan-500' },
+    { game: 'The First Descendant', fps1080p: '90', fps1440p: '65', fps3440p: '47', notes: t.gaming.dlssBalanced, color: 'from-cyan-500 to-blue-500' },
+    { game: 'Cyberpunk 2077', fps1080p: '70', fps1440p: '55', fps3440p: '38', notes: t.gaming.rtDlss, color: 'from-purple-500 to-violet-500' },
+    { game: 'Red Dead Redemption 2', fps1080p: '85', fps1440p: '60', fps3440p: '40', notes: t.gaming.beautifulVisuals, color: 'from-orange-500 to-amber-500' },
+    { game: 'Control', fps1080p: '90', fps1440p: '65', fps3440p: '45', notes: t.gaming.rtDlssSupported, color: 'from-purple-500 to-pink-500' },
+    { game: 'Shadow of Tomb Raider', fps1080p: '110', fps1440p: '80', fps3440p: '55', notes: t.gaming.excellentPerformance, color: 'from-teal-500 to-cyan-500' },
+  ];
+
+  const useCases = [
+    {
+      title: t.gaming.competitiveGaming,
+      description: t.gaming.competitiveGamingDesc,
+      icon: Target,
+      color: 'from-green-500 to-emerald-500'
+    },
+    {
+      title: t.gaming.aaaGaming,
+      description: t.gaming.aaaGamingDesc,
+      icon: Gamepad2,
+      color: 'from-blue-500 to-cyan-500'
+    },
+    {
+      title: t.gaming.streaming,
+      description: t.gaming.streamingDesc,
+      icon: TrendingUp,
+      color: 'from-purple-500 to-violet-500'
+    },
+    {
+      title: t.gaming.videoEditing,
+      description: t.gaming.videoEditingDesc,
+      icon: Gamepad2,
+      color: 'from-orange-500 to-amber-500'
+    },
+    {
+      title: t.gaming.rendering3d,
+      description: t.gaming.rendering3dDesc,
+      icon: TrendingUp,
+      color: 'from-pink-500 to-rose-500'
+    },
+    {
+      title: t.gaming.machineLearning,
+      description: t.gaming.machineLearningDesc,
+      icon: Target,
+      color: 'from-indigo-500 to-purple-500'
+    },
+  ];
+
   return (
     <section className="py-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -66,9 +70,9 @@ export function GamingSection() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4">
-            Gaming Performance
+            {t.gaming.title}
           </h2>
-          <p className="text-purple-300">Real-world FPS in popular titles</p>
+          <p className="text-purple-300">{t.gaming.subtitle}</p>
         </motion.div>
 
         <motion.div
@@ -83,10 +87,11 @@ export function GamingSection() {
               <Table>
                 <TableHeader>
                   <TableRow className="border-purple-500/30 hover:bg-purple-500/5">
-                    <TableHead className="text-purple-300">Game</TableHead>
-                    <TableHead className="text-purple-300">1080p Ultra</TableHead>
-                    <TableHead className="text-purple-300">1440p High</TableHead>
-                    <TableHead className="text-purple-300">Notes</TableHead>
+                    <TableHead className="text-purple-300">{t.gaming.game}</TableHead>
+                    <TableHead className="text-purple-300">{t.gaming.ultra1080p}</TableHead>
+                    <TableHead className="text-purple-300">{t.gaming.high1440p}</TableHead>
+                    <TableHead className="text-purple-300">{t.gaming.ultra3440p}</TableHead>
+                    <TableHead className="text-purple-300">{t.gaming.notes}</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
@@ -115,6 +120,11 @@ export function GamingSection() {
                           {game.fps1440p} FPS
                         </Badge>
                       </TableCell>
+                      <TableCell>
+                        <Badge className="bg-blue-500/20 border-blue-500/50 text-blue-300">
+                          {game.fps3440p} FPS
+                        </Badge>
+                      </TableCell>
                       <TableCell className="text-purple-300">{game.notes}</TableCell>
                     </motion.tr>
                   ))}
@@ -133,9 +143,9 @@ export function GamingSection() {
           className="text-center mb-12"
         >
           <h2 className="text-4xl md:text-5xl bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4">
-            Excellent For
+            {t.gaming.excellentForTitle}
           </h2>
-          <p className="text-purple-300">Versatile performance for any workload</p>
+          <p className="text-purple-300">{t.gaming.excellentForSubtitle}</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -180,27 +190,27 @@ export function GamingSection() {
           className="mt-12"
         >
           <Card className="bg-gradient-to-r from-purple-900/30 to-violet-900/30 backdrop-blur-sm border border-purple-500/50 p-8">
-            <h3 className="text-2xl text-white mb-6 text-center">Why Luna Super Machine?</h3>
+            <h3 className="text-2xl text-white mb-6 text-center">{t.gaming.whyLunaTitle}</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <div className="text-center">
                 <div className="text-3xl mb-2">⚖️</div>
-                <div className="text-white mb-1">Balanced Performance</div>
-                <div className="text-sm text-purple-300">Perfect component harmony</div>
+                <div className="text-white mb-1">{t.gaming.balancedPerformance}</div>
+                <div className="text-sm text-purple-300">{t.gaming.balancedPerformanceDesc}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl mb-2">🚀</div>
-                <div className="text-white mb-1">Future-Proof</div>
-                <div className="text-sm text-purple-300">12-core CPU & 12GB VRAM</div>
+                <div className="text-white mb-1">{t.gaming.futureProof}</div>
+                <div className="text-sm text-purple-300">{t.gaming.futureProofDesc}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl mb-2">💾</div>
-                <div className="text-white mb-1">Massive RAM</div>
-                <div className="text-sm text-purple-300">64GB handles everything</div>
+                <div className="text-white mb-1">{t.gaming.massiveRam}</div>
+                <div className="text-sm text-purple-300">{t.gaming.massiveRamDesc}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl mb-2">⚡</div>
-                <div className="text-white mb-1">Blazing Storage</div>
-                <div className="text-sm text-purple-300">7,510 MB/s verified! ⭐</div>
+                <div className="text-white mb-1">{t.gaming.blazingStorage}</div>
+                <div className="text-sm text-purple-300">{t.gaming.blazingStorageDesc}</div>
               </div>
             </div>
           </Card>

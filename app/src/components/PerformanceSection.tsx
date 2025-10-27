@@ -4,60 +4,62 @@ import { Badge } from './ui/badge';
 import { Progress } from './ui/progress';
 import { Star, TrendingUp, Zap, ThermometerSun } from 'lucide-react';
 import { useEffect, useState } from 'react';
-
-const performanceMetrics = [
-  {
-    category: 'CPU Performance',
-    rating: 5,
-    status: 'EXCEEDS EXPECTATIONS',
-    color: 'text-green-400',
-    metrics: [
-      { name: 'Sysbench Multi-Core (24T)', value: 63705, expected: 60000, unit: 'events/s' },
-      { name: '7-Zip Compression', value: 87931, expected: 80000, unit: 'MIPS' },
-      { name: '7-Zip Decompression', value: 96799, expected: 85000, unit: 'MIPS' },
-    ]
-  },
-  {
-    category: 'GPU Performance',
-    rating: 5,
-    status: 'PERFECT CONFIGURATION',
-    color: 'text-green-400',
-    metrics: [
-      { name: 'GLMark2 Score', value: 5163, expected: 5000, unit: '' },
-      { name: 'VRAM', value: 12288, expected: 12288, unit: 'MiB' },
-      { name: 'Power Draw', value: 170, expected: 170, unit: 'W' },
-    ]
-  },
-  {
-    category: 'Storage Performance',
-    rating: 5,
-    status: 'EXCEEDS SPECIFICATION!',
-    color: 'text-green-400',
-    metrics: [
-      { name: 'Sequential Read', value: 7510, expected: 7000, unit: 'MB/s', highlight: true },
-      { name: 'Sequential Write', value: 4959, expected: 5000, unit: 'MB/s' },
-      { name: 'Random Read IOPS (4K)', value: 750000, expected: 700000, unit: 'IOPS' },
-    ]
-  },
-  {
-    category: 'Memory Performance',
-    rating: 5,
-    status: 'PERFECT CONFIGURATION',
-    color: 'text-green-400',
-    metrics: [
-      { name: 'Capacity', value: 64, expected: 64, unit: 'GB' },
-      { name: 'Speed', value: 3200, expected: 3200, unit: 'MT/s' },
-      { name: 'Configuration', value: 100, expected: 100, unit: '% Dual-Channel' },
-    ]
-  }
-];
+import { useI18n } from '../i18n/I18nProvider';
 
 export function PerformanceSection() {
+  const { t } = useI18n();
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     setIsVisible(true);
   }, []);
+
+  const performanceMetrics = [
+    {
+      category: t.performance.cpuPerformance,
+      rating: 5,
+      status: t.performance.cpuStatus,
+      color: 'text-green-400',
+      metrics: [
+        { name: t.performance.sysbenchMultiCore, value: 63705, expected: 60000, unit: 'events/s' },
+        { name: t.performance.sevenZipCompression, value: 87931, expected: 80000, unit: 'MIPS' },
+        { name: t.performance.sevenZipDecompression, value: 96799, expected: 85000, unit: 'MIPS' },
+      ]
+    },
+    {
+      category: t.performance.gpuPerformance,
+      rating: 5,
+      status: t.performance.gpuStatus,
+      color: 'text-green-400',
+      metrics: [
+        { name: t.performance.glmark2Score, value: 5163, expected: 5000, unit: '' },
+        { name: t.performance.vram, value: 12288, expected: 12288, unit: 'MiB' },
+        { name: t.performance.powerDraw, value: 170, expected: 170, unit: 'W' },
+      ]
+    },
+    {
+      category: t.performance.storagePerformance,
+      rating: 5,
+      status: t.performance.storageStatus,
+      color: 'text-green-400',
+      metrics: [
+        { name: t.performance.sequentialRead, value: 7510, expected: 7000, unit: 'MB/s', highlight: true },
+        { name: t.performance.sequentialWrite, value: 4959, expected: 5000, unit: 'MB/s' },
+        { name: t.performance.randomReadIOPS, value: 750000, expected: 700000, unit: 'IOPS' },
+      ]
+    },
+    {
+      category: t.performance.memoryPerformance,
+      rating: 5,
+      status: t.performance.memoryStatus,
+      color: 'text-green-400',
+      metrics: [
+        { name: t.performance.capacity, value: 64, expected: 64, unit: 'GB' },
+        { name: t.performance.speed, value: 3200, expected: 3200, unit: 'MT/s' },
+        { name: t.performance.configuration, value: 100, expected: 100, unit: '% Dual-Channel' },
+      ]
+    }
+  ];
 
   return (
     <section id="performance" className="py-20 px-4">
@@ -77,12 +79,12 @@ export function PerformanceSection() {
             <Star className="w-6 h-6 text-yellow-400 fill-yellow-400" />
           </div>
           <h2 className="text-4xl md:text-5xl bg-gradient-to-r from-purple-400 to-violet-400 bg-clip-text text-transparent mb-4">
-            Performance Highlights
+            {t.performance.title}
           </h2>
-          <p className="text-purple-300">Benchmarked October 26, 2025 - All Tests Verified ✓</p>
+          <p className="text-purple-300">{t.performance.subtitle}</p>
           <div className="mt-4">
             <Badge className="bg-green-500/20 border border-green-500/50 text-green-300 px-6 py-2">
-              OVERALL RATING: 5.0/5.0 - PERFECT
+              {t.performance.overallRating}
             </Badge>
           </div>
         </motion.div>
@@ -150,11 +152,11 @@ export function PerformanceSection() {
                         </div>
                         <div className="flex justify-between mt-1">
                           <span className="text-xs text-purple-400">
-                            Expected: {metric.expected.toLocaleString()} {metric.unit}
+                            {t.performance.expected}: {metric.expected.toLocaleString()} {metric.unit}
                           </span>
                           {exceeds && (
                             <span className="text-xs text-green-400">
-                              +{(percentage - 100).toFixed(1)}% above target
+                              +{(percentage - 100).toFixed(1)}% {t.performance.aboveTarget}
                             </span>
                           )}
                         </div>
@@ -178,25 +180,25 @@ export function PerformanceSection() {
           <Card className="bg-gradient-to-br from-red-900/30 to-orange-900/30 border border-red-500/50 p-6 text-center">
             <Zap className="w-8 h-8 text-red-400 mx-auto mb-2" />
             <div className="text-2xl text-white mb-1">92,365</div>
-            <div className="text-sm text-red-300">7-Zip Overall MIPS</div>
+            <div className="text-sm text-red-300">{t.performance.sevenZipOverall}</div>
           </Card>
 
           <Card className="bg-gradient-to-br from-green-900/30 to-emerald-900/30 border border-green-500/50 p-6 text-center">
             <MonitorDot className="w-8 h-8 text-green-400 mx-auto mb-2" />
             <div className="text-2xl text-white mb-1">5,163</div>
-            <div className="text-sm text-green-300">GLMark2 Score</div>
+            <div className="text-sm text-green-300">{t.performance.glmark2Score}</div>
           </Card>
 
           <Card className="bg-gradient-to-br from-purple-900/30 to-violet-900/30 border border-purple-500/50 p-6 text-center">
             <TrendingUp className="w-8 h-8 text-purple-400 mx-auto mb-2" />
             <div className="text-2xl text-white mb-1">7,510</div>
-            <div className="text-sm text-purple-300">MB/s Read Speed ⭐</div>
+            <div className="text-sm text-purple-300">{t.performance.readSpeed}</div>
           </Card>
 
           <Card className="bg-gradient-to-br from-cyan-900/30 to-blue-900/30 border border-cyan-500/50 p-6 text-center">
             <ThermometerSun className="w-8 h-8 text-cyan-400 mx-auto mb-2" />
             <div className="text-2xl text-white mb-1">Excellent</div>
-            <div className="text-sm text-cyan-300">Thermal Performance</div>
+            <div className="text-sm text-cyan-300">{t.performance.thermalPerformance}</div>
           </Card>
         </motion.div>
       </div>

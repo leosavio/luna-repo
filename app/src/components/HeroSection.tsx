@@ -2,8 +2,11 @@ import { motion } from 'motion/react';
 import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Github, Star, Zap, Award } from 'lucide-react';
+import { useI18n } from '../i18n/I18nProvider';
 
 export function HeroSection() {
+  const { t } = useI18n();
+  
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
       {/* Animated gradient orbs */}
@@ -49,11 +52,11 @@ export function HeroSection() {
           >
             <Badge variant="outline" className="bg-purple-500/10 border-purple-500/50 text-purple-300 px-4 py-1">
               <Star className="w-4 h-4 mr-1" />
-              Verified Performance ⭐⭐⭐⭐⭐
+              {t.hero.verifiedPerformance}
             </Badge>
             <Badge variant="outline" className="bg-green-500/10 border-green-500/50 text-green-300 px-4 py-1">
               <Award className="w-4 h-4 mr-1" />
-              Perfect Score: 5.0/5.0
+              {t.hero.perfectScore}
             </Badge>
           </motion.div>
 
@@ -63,7 +66,7 @@ export function HeroSection() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
-            Luna Super Machine
+            {t.hero.title}
           </motion.h1>
 
           <motion.div
@@ -72,7 +75,7 @@ export function HeroSection() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-xl md:text-2xl text-purple-200"
           >
-            <p>High-Performance Gaming & Workstation Computer</p>
+            <p>{t.hero.subtitle}</p>
           </motion.div>
 
           <motion.div
@@ -103,23 +106,23 @@ export function HeroSection() {
           >
             <div className="flex items-center justify-center gap-2 mb-3">
               <Zap className="w-5 h-5 text-yellow-400" />
-              <span className="text-green-400">VERIFIED PERFORMANCE - October 26, 2025</span>
+              <span className="text-green-400">{t.hero.verifiedDate}</span>
             </div>
             <div className="grid md:grid-cols-4 gap-4 text-sm">
               <div>
-                <div className="text-purple-300">CPU</div>
+                <div className="text-purple-300">{t.hero.cpu}</div>
                 <div className="text-white">+13% Exceeds</div>
               </div>
               <div>
-                <div className="text-purple-300">GPU GLMark2</div>
+                <div className="text-purple-300">{t.hero.gpu}</div>
                 <div className="text-white">5,163</div>
               </div>
               <div>
-                <div className="text-purple-300">Storage</div>
+                <div className="text-purple-300">{t.hero.storage}</div>
                 <div className="text-white">7,510 MB/s ⭐</div>
               </div>
               <div>
-                <div className="text-purple-300">Thermal</div>
+                <div className="text-purple-300">{t.hero.thermal}</div>
                 <div className="text-white">Excellent</div>
               </div>
             </div>
@@ -137,7 +140,7 @@ export function HeroSection() {
             >
               <a href="https://github.com/leosavio/luna-repo" target="_blank" rel="noopener noreferrer">
                 <Github className="w-5 h-5 mr-2" />
-                View on GitHub
+                {t.hero.viewOnGitHub}
               </a>
             </Button>
             <Button 
@@ -146,7 +149,7 @@ export function HeroSection() {
               onClick={() => document.getElementById('benchmarks')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Award className="w-5 h-5 mr-2" />
-              View Benchmarks
+              {t.hero.viewBenchmarks}
             </Button>
           </motion.div>
 
