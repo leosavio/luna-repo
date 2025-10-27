@@ -1,0 +1,75 @@
+# Luna Super Machine - Cloudflare Pages Redirects
+# Block known spam/bot paths and redirect to homepage
+
+# Block spam paths (404)
+/adaniairports             /404.html  404
+/adanidigitallabs          /404.html  404
+/alvertoninsurancebrokers  /404.html  404
+/americanelectriclighting  /404.html  404
+/bain                      /404.html  404
+/bamconstructie            /404.html  404
+/banktel                   /404.html  404
+/bettermentforbusiness     /404.html  404
+/bohcard                   /404.html  404
+/bosta-beto                /404.html  404
+/brioni                    /404.html  404
+/carmax                    /404.html  404
+/certinia                  /404.html  404
+/ciassante                 /404.html  404
+/ciinvestment              /404.html  404
+/columbiagas               /404.html  404
+/crhcom                    /404.html  404
+/donedealpro               /404.html  404
+/endeavortitle             /404.html  404
+/equipyourlife             /404.html  404
+/fedpoint                  /404.html  404
+/feitest                   /404.html  404
+/fpsnet                    /404.html  404
+/genestra                  /404.html  404
+/giantcarlisle             /404.html  404
+/haakeins                  /404.html  404
+/hrctitle                  /404.html  404
+/investmentplan            /404.html  404
+/iovation                  /404.html  404
+/keroco                    /404.html  404
+/longevityanalysis         /404.html  404
+/marketwatch               /404.html  404
+/mercedesbenzstadium       /404.html  404
+/mercurypharma             /404.html  404
+/mmcgns                    /404.html  404
+/mmiproductsinc            /404.html  404
+/modelcalc                 /404.html  404
+/monitormyidentity         /404.html  404
+/mybenefitseveryday        /404.html  404
+/myinlandnwportal          /404.html  404
+/nbg-alerts                /404.html  404
+/pipevaluetool             /404.html  404
+/qpost                     /404.html  404
+/ryerson                   /404.html  404
+/secure-fkc                /404.html  404
+/slice                     /404.html  404
+/smarties                  /404.html  404
+/softexpedia               /404.html  404
+/strongroomsolutions       /404.html  404
+/taadvantage               /404.html  404
+/taofthevalley             /404.html  404
+/telefonica                /404.html  404
+/thermoclick               /404.html  404
+/torrentcorp               /404.html  404
+/transunionhpi             /404.html  404
+/truvalidate               /404.html  404
+/univera                   /404.html  404
+/valeincopes               /404.html  404
+/viva-cleaning             /404.html  404
+/vyopta                    /404.html  404
+/whymoistureshield         /404.html  404
+/wmmercer                  /404.html  404
+/wwwinc                    /404.html  404
+/xn--cr-w9a                /404.html  404
+/xn--cr-zgb                /404.html  404
+/xn--rh-dma                /404.html  404
+/zatca                     /404.html  404
+/cycoloy                   /404.html  404
+
+# Fallback - all other paths go to index for SPA routing
+/*    /index.html   200

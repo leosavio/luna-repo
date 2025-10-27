@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>404 - Page Not Found | Luna Super Machine</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #0a0118 0%, #1a0a2e 50%, #0a0118 100%);
+      color: #e9d5ff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      text-align: center;
+      max-width: 600px;
+    }
+    
+    h1 {
+      font-size: 120px;
+      background: linear-gradient(135deg, #a855f7 0%, #ec4899 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 20px;
+      font-weight: 900;
+    }
+    
+    h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #c4b5fd;
+    }
+    
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #d8b4fe;
+      line-height: 1.6;
+    }
+    
+    a {
+      display: inline-block;
+      padding: 15px 40px;
+      background: linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 10px;
+      font-weight: 600;
+      font-size: 18px;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 30px rgba(124, 58, 237, 0.3);
+    }
+    
+    a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 15px 40px rgba(124, 58, 237, 0.5);
+    }
+    
+    .glow {
+      position: absolute;
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(124, 58, 237, 0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      filter: blur(60px);
+      pointer-events: none;
+      animation: pulse 4s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.5; transform: scale(1); }
+      50% { opacity: 0.8; transform: scale(1.1); }
+    }
+    
+    @media (max-width: 768px) {
+      h1 { font-size: 80px; }
+      h2 { font-size: 24px; }
+      p { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="glow" style="top: 10%; left: 10%;"></div>
+  <div class="glow" style="bottom: 10%; right: 10%;"></div>
+  
+  <div class="container">
+    <h1>404</h1>
+    <h2>Page Not Found</h2>
+    <p>The page you're looking for doesn't exist or has been moved.</p>
+    <a href="/">🚀 Back to Luna Super Machine</a>
+  </div>
+</body>
+</html>

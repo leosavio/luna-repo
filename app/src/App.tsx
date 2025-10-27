@@ -41,7 +41,8 @@ export default function App() {
       { name: 'description', content: 'Luna Super Machine - High-Performance Gaming & Workstation Computer. AMD Ryzen 9 5900X, RTX 3060 12GB, 64GB RAM, 2TB NVMe. Verified benchmarks with exceptional performance!' },
       { name: 'keywords', content: 'gaming pc, ryzen 9 5900x, rtx 3060, ubuntu, workstation, benchmarks, performance pc' },
       { name: 'author', content: 'Luna Super Machine' },
-      { name: 'theme-color', content: '#7c3aed' }
+      { name: 'theme-color', content: '#7c3aed' },
+      { name: 'robots', content: 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' },
     ];
 
     metaTags.forEach(({ property, name, content }) => {
