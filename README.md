@@ -35,7 +35,7 @@ The **Luna Super Machine** is a meticulously crafted high-performance computer d
 | **RAM** | Corsair Vengeance LPX 64GB (2x32GB) DDR4-3200 CL16 |
 | **Storage** | Kingston KC3000 2TB NVMe PCIe 4.0 (7000 MB/s R/W) |
 | **Motherboard** | ASUS TUF Gaming B550-PLUS (WI-FI) |
-| **Cooling** | Corsair H60 120mm AIO Water Cooler (White LED) |
+| **Cooling** | Husky Icy Comet WT650 (ARGB) |
 | **PSU** | Corsair RM850x 850W 80+ Gold Modular (White) |
 | **Case** | XPG Starker Compact Mid Tower (Tempered Glass, 2x ARGB Fans) |
 | **OS** | Ubuntu 22.04.5 LTS |
@@ -93,7 +93,7 @@ The **Luna Super Machine** is a meticulously crafted high-performance computer d
 - **Latency**: 65-75 ns (Expected)
 
 ### Thermal Performance - ⭐⭐⭐⭐⭐ EXCELLENT COOLING
-- **CPU (Tctl)**: 50.1°C idle ✓ (Corsair H60 AIO working perfectly)
+- **CPU (Tctl)**: 34.5°C idle ✓ (Husky Icy Comet WT650 ARGB working perfectly)
 - **CPU Cores (Tccd1/2)**: 45-47°C idle ✓ (Excellent temps)
 - **GPU**: 40°C idle @ 14W ✓ (Efficient cooling)
 - **NVMe SSD**: 54.9°C ✓ (No throttling, excellent)
@@ -262,6 +262,7 @@ The showcase includes:
 - Motherboard fixing on Case: https://youtu.be/_rAUn3Zc7eo
 - WaterCooler part 1: https://youtu.be/UBpIvL8APe4
 - WaterCooler part 2: https://youtu.be/JWQUUx0IBlw
+- Upgrade Watercooler - Husky WT650: https://youtu.be/aLAv8IQjpqc
 - Case: https://youtube.com/shorts/nQewL7FmGMw?feature=share
 - GPU: https://youtu.be/ZXM7xkRR7J0
 - Font: https://youtu.be/C4o4SE9Y79I

@@ -34,6 +34,11 @@ export function VideosSection() {
       thumbnail: 'https://img.youtube.com/vi/JWQUUx0IBlw/maxresdefault.jpg'
     },
     {
+      titleKey: 'upgradeWatercooler' as const,
+      url: 'https://youtu.be/aLAv8IQjpqc',
+      thumbnail: 'https://img.youtube.com/vi/aLAv8IQjpqc/maxresdefault.jpg'
+    },
+    {
       titleKey: 'case' as const,
       url: 'https://youtube.com/shorts/nQewL7FmGMw',
       thumbnail: 'https://img.youtube.com/vi/nQewL7FmGMw/maxresdefault.jpg'

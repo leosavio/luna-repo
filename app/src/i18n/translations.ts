@@ -219,6 +219,7 @@ export interface Translations {
     motherboardFixing: string;
     waterCoolerPart1: string;
     waterCoolerPart2: string;
+    upgradeWatercooler: string;
     case: string;
     gpuInstallation: string;
     frontPanel: string;
@@ -283,8 +284,8 @@ export const translations: Record<Language, Translations> = {
       motherboardValue: 'ASUS TUF Gaming B550-PLUS',
       motherboardDetails: 'WI-FI',
       cooling: 'Cooling',
-      coolingValue: 'Corsair H60 120mm AIO',
-      coolingDetails: 'Water Cooler (White LED)',
+      coolingValue: 'Husky Icy Comet WT650',
+      coolingDetails: 'ARGB Water Cooler',
       psu: 'PSU',
       psuValue: 'Corsair RM850x 850W',
       psuDetails: '80+ Gold Modular (White)',
@@ -432,9 +433,9 @@ export const translations: Record<Language, Translations> = {
       temperatureDuringGaming: 'Temperature During Gaming Session',
       cpuTemp: 'CPU Temp (°C)',
       gpuTemp: 'GPU Temp (°C)',
-      corsairH60: 'Corsair H60 AIO',
+      corsairH60: 'Husky Icy Comet WT650',
       excellentCooling: 'Excellent CPU Cooling',
-      waterCooler: '120mm Water Cooler',
+      waterCooler: 'ARGB Water Cooler',
       caseAirflow: 'Case Airflow',
       strategicFan: 'Strategic Fan Setup',
       argbFans: '2x ARGB Fans',
@@ -458,6 +459,7 @@ export const translations: Record<Language, Translations> = {
       motherboardFixing: 'Motherboard Fixing on Case',
       waterCoolerPart1: 'WaterCooler Part 1',
       waterCoolerPart2: 'WaterCooler Part 2',
+      upgradeWatercooler: 'Upgrade Watercooler - Husky WT650',
       case: 'Case',
       gpuInstallation: 'GPU Installation',
       frontPanel: 'Front Panel',
@@ -520,8 +522,8 @@ export const translations: Record<Language, Translations> = {
       motherboardValue: 'ASUS TUF Gaming B550-PLUS',
       motherboardDetails: 'WI-FI',
       cooling: 'Resfriamento',
-      coolingValue: 'Corsair H60 120mm AIO',
-      coolingDetails: 'Water Cooler (LED Branco)',
+      coolingValue: 'Husky Icy Comet WT650',
+      coolingDetails: 'Water Cooler ARGB',
       psu: 'Fonte',
       psuValue: 'Corsair RM850x 850W',
       psuDetails: '80+ Gold Modular (Branca)',
@@ -669,9 +671,9 @@ export const translations: Record<Language, Translations> = {
       temperatureDuringGaming: 'Temperatura Durante Sessão de Jogo',
       cpuTemp: 'Temp. CPU (°C)',
       gpuTemp: 'Temp. GPU (°C)',
-      corsairH60: 'Corsair H60 AIO',
+      corsairH60: 'Husky Icy Comet WT650',
       excellentCooling: 'Excelente Resfriamento da CPU',
-      waterCooler: 'Water Cooler 120mm',
+      waterCooler: 'Water Cooler ARGB',
       caseAirflow: 'Fluxo de Ar do Gabinete',
       strategicFan: 'Configuração Estratégica de Ventoinhas',
       argbFans: '2x Ventoinhas ARGB',
@@ -695,6 +697,7 @@ export const translations: Record<Language, Translations> = {
       motherboardFixing: 'Fixação da Placa-Mãe no Gabinete',
       waterCoolerPart1: 'WaterCooler Parte 1',
       waterCoolerPart2: 'WaterCooler Parte 2',
+      upgradeWatercooler: 'Upgrade Watercooler - Husky WT650',
       case: 'Gabinete',
       gpuInstallation: 'Instalação da GPU',
       frontPanel: 'Painel Frontal',

@@ -1,11 +1,38 @@
 # Luna Super Machine - Updates Summary
 
-**Date**: October 27, 2025  
+**Date**: November 9, 2025
 **Status**: ✅ **All Updates Complete**
 
 ---
 
 ## 📋 What Was Done
+
+### 🆕 **Latest Update - November 9, 2025**
+
+#### **Watercooler Upgrade** 🌊
+**Component Replaced**: Corsair H60 120mm AIO → **Husky Icy Comet WT650 (ARGB)**
+
+**Files Updated**:
+1. ✅ **README.md** - Updated cooling specification and added upgrade video
+2. ✅ **translations.ts** - Updated cooling values in English and Portuguese
+3. ✅ **VideosSection.tsx** - Added new upgrade video to Build Videos section
+4. ✅ **UPDATES_SUMMARY.md** - Documented the watercooler upgrade
+
+**Changes Made**:
+- Updated system specifications table with new watercooler
+- Updated thermal performance section references
+- Added "Upgrade Watercooler - Husky WT650" video (https://youtu.be/aLAv8IQjpqc)
+- Updated all cooling-related translations (EN/PT-BR)
+- Maintained all benchmark data (benchmarks excluded from updates as requested)
+
+**New Watercooler Features**:
+- ✅ ARGB lighting (upgraded from White LED)
+- ✅ Enhanced cooling performance
+- ✅ Modern aesthetic with RGB customization
+
+---
+
+## 📋 Previous Updates
 
 ### 1. ✅ **App Folder Analysis**
 - Reviewed complete static page structure
@@ -116,13 +143,21 @@ maxSettings: 'Configurações máximas, 60 FPS cap',
 
 ## 📊 Files Modified
 
+### **November 9, 2025 - Watercooler Upgrade**
+| File | Changes | Status |
+|------|---------|--------|
+| `luna-repo/README.md` | Updated cooling spec, thermal section, added upgrade video | ✅ Complete |
+| `app/src/i18n/translations.ts` | Updated cooling values (EN/PT), added upgrade video translation | ✅ Complete |
+| `app/src/components/VideosSection.tsx` | Added upgrade watercooler video | ✅ Complete |
+| `luna-repo/UPDATES_SUMMARY.md` | Documented watercooler upgrade | ✅ Complete |
+
+### **October 27, 2025 - Gaming Performance Update**
 | File | Changes | Status |
 |------|---------|--------|
 | `app/src/components/GamingSection.tsx` | Added 3 new games, updated 3440p FPS | ✅ Complete |
 | `app/src/i18n/translations.ts` | Added 2 new translation keys (EN/PT) | ✅ Complete |
 | `luna-repo/README.md` | Added gaming performance section with tables | ✅ Complete |
 | `luna-repo/app/APP_REVIEW.md` | Created comprehensive app review | ✅ Complete |
-| `luna-repo/UPDATES_SUMMARY.md` | This file - summary of all updates | ✅ Complete |
 
 ---
 
